@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'iranSans';
+  src: url('font/iranSans/Iransans.eot');
+  src: url('font/iranSans/Iransans.woff2') format('woff2'),
+       url('font/iranSans/Iransans.ttf') format('truetype'),
+       url('font/iranSans/Iransans.svg#sorinwd-IRANSans') format('svg'),
+       url('font/iranSans/Iransans.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+/************************************/
+/************ DEFAULT *************/
+/*********************************/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+img{border:0 none;}
+html{height:100%;font-size:14px;font-family: 'iranSans'!important;}
+body {position:relative;min-height:100%;}
+a,i,h1,h2,h3,h4,h5,h6{
+    text-decoration:none;
+    -webkit-transition:all .4s;
+    transition:all .4s;
+    font-size:inherit; color:inherit; line-height:inherit;
+    font-family: 'iranSans',Tahoma;
+}
+ul,ol{
+    list-style-type: none;
+}
+input,textarea{outline: 0 none;}
+input,textarea,a,i{-webkit-transition:all .4s;transition:all .4s;}
+textarea{resize:none;}
+select option{padding:0 10px;line-height:25px;}
+input.error, textarea.error{border:1px dotted #FF0000;}
+input[type=submit],
+input[type=checkbox],
+input[type=radio],
+label.choice{cursor:pointer;vertical-align:middle;}
+input[type=checkbox],
+input[type=radio]{margin-left:5px;}
+input[disabled],
+.disabled,.disabled *{cursor:not-allowed !important;background-color: #eee !important;}
+.en_word{font-family: 'Verdana'!important;}
+
+/************************************/
+/************* GENERAL *************/
+/*********************************/
+.form_group_style1 {
+
+}
+.form_group_style1 *+.uk-grid-margin,
+.form_group_style1 .uk-grid+.uk-grid,
+.form_group_style1 .uk-grid>.uk-grid-margin{
+    margin-top: 15px;
+}
+.form_group_style1 .fg1_title {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: rebeccapurple;
+}
+.form_group_style1 .fg1_inner {
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 25px;
+}
+
+/*#1*/
+.form_style1{}
+.form_style1 .fs1_label{
+    display: inline-block;
+    font-size: 0.85rem;
+    line-height: 20px;
+    margin-bottom: 4px;
+    color: #555;
+    position: relative;
+}
+.form_style1 .fs1_label.req:after{
+    content: '*';
+    position: absolute;
+    color: #f00;
+    left: -10px;
+    top: 0;
+}
+.form_style1 input[type='text'],
+.form_style1 textarea{
+    font-family: 'iranSans';
+    display: block;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(224, 224, 224, 0.5);
+    padding: 5px 10px;
+    border-radius: 2px;
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+}
+.form_style1 textarea{
+    transition: none;
+}
+.form_style1 input[type='text']:focus{
+    border-color: rgba(224, 224, 224, 1);
+}
+
+/*#1*/
+.check_style1{
+    font-size: 0.9rem;
+    margin: 10px 0;
+}
+.check_style1 > label{
+    cursor: pointer;
+}
+.check_style1 input[type='checkbox']{
+    height: 14px;
+    width: 14px;
+}
+.check_style1 input[type='radio']{}
+.check_style1 .uk-checkbox:checked,
+.check_style1 .uk-checkbox:indeterminate,
+.check_style1 .uk-radio:checked{
+    background-color: #66339f;
+}
+.check_style1 .uk-checkbox:focus,
+.check_style1 .uk-radio:focus{
+    border-color: #66339f;
+}
+
+/************************************/
+/*************** MAIN **************/
+/*********************************/
+#apply .inner{
+    padding: 40px 0;
+}
