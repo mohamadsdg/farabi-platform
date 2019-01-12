@@ -62,7 +62,7 @@ input[disabled],
 .form_group_style1 *+.uk-grid-margin,
 .form_group_style1 .uk-grid+.uk-grid,
 .form_group_style1 .uk-grid>.uk-grid-margin{
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .form_group_style1 .fg1_title {
     font-size: 1.2rem;
@@ -77,13 +77,15 @@ input[disabled],
 }
 
 /*#1*/
-.form_style1{}
+.form_style1{
+    padding: 0 12%;
+}
 .form_style1 .fs1_label{
     display: inline-block;
     font-size: 0.95rem;
     line-height: 20px;
-    margin-bottom: 4px;
-    color: #5f5f5f;
+    margin-bottom: 8px;
+    color: #2b2b2b;
     position: relative;
     padding-right: 6px;
 }
@@ -106,6 +108,7 @@ input[disabled],
     border-radius: 2px;
     background: #fdfdfd;
     transition: all 0.3s ease;
+    color: #6f6f6f;
 }
 .form_style1 textarea{
     transition: none;
@@ -115,6 +118,10 @@ input[disabled],
 }
 .form_style1 .fs1_btn{}
 .form_style1 .fs1_btn_acc{}
+.form_style1 .wrapper_check{
+    padding: 15px;
+    background: #f9f9f9;
+}
 
 /*#1*/
 .check_style1{
@@ -196,6 +203,7 @@ input[disabled],
     left: 70%;
 
 }
+.progress_tracker_style1 .pts1_step.pass:after,
 .progress_tracker_style1 .pts1_step.active:after{
     background: #66339f;
 }
@@ -232,6 +240,9 @@ input[disabled],
 .progress_tracker_style1 .pts1_step.pass .pts1_text,
 .progress_tracker_style1 .pts1_step.active .pts1_text{
     color: #66339f;
+}
+.progress_tracker_style1 .pts1_step.active .pts1_text{
+    font-weight: bold;
 }
 
 /************************************/
