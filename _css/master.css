@@ -15,6 +15,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    font-family: 'iranSans'!important;
 }
 img{border:0 none;}
 html{height:100%;font-size:14px;font-family: 'iranSans'!important;}
@@ -47,6 +48,10 @@ input[disabled],
 /************************************/
 /************* GENERAL *************/
 /*********************************/
+.form_all_group{
+    padding: 32px;
+        background: #f7f7f7;
+}
 .form_group_style1 {
 
 }
@@ -61,27 +66,30 @@ input[disabled],
     color: rebeccapurple;
 }
 .form_group_style1 .fg1_inner {
-    border: 1px solid #e8e8e8;
+    border: 1px solid #eee;
     border-radius: 4px;
     padding: 25px;
+    background: #fff;
 }
 
 /*#1*/
 .form_style1{}
 .form_style1 .fs1_label{
     display: inline-block;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     line-height: 20px;
     margin-bottom: 4px;
-    color: #555;
+    color: #5f5f5f;
     position: relative;
+    padding-right: 6px;
 }
 .form_style1 .fs1_label.req:after{
     content: '*';
     position: absolute;
     color: #f00;
-    left: -10px;
+    right: 0;
     top: 0;
+    font-size: 75%;
 }
 .form_style1 input[type='text'],
 .form_style1 textarea{
@@ -101,6 +109,8 @@ input[disabled],
 .form_style1 input[type='text']:focus{
     border-color: rgba(224, 224, 224, 1);
 }
+.form_style1 .fs1_btn{}
+.form_style1 .fs1_btn_acc{}
 
 /*#1*/
 .check_style1{
@@ -125,9 +135,39 @@ input[disabled],
     border-color: #66339f;
 }
 
+/*#1*/
+.btn_style1{
+    font-size: .85rem;
+    line-height: 29px;
+    padding: 0 15px;
+    min-width: 140px;
+    border-radius: 2px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .1s ease-in-out;
+    transition-property: color,background-color,border-color;
+    color: #fff;
+    cursor: pointer;
+}
+.btn_style1.bg_purple{
+    background-color: #66339f;
+    border-color: #66339f;
+}
+.btn_style1.bg_purple:hover{
+    background: #57298a;
+;
+}
+.btn_style1.bg_gray{
+    background-color: #ccc;
+    border-color: #ccc;
+}
+.btn_style1.bg_gray:hover{
+    background-color: #c3c2c2;
+}
 /************************************/
 /*************** MAIN **************/
 /*********************************/
-#apply .inner{
-    padding: 40px 0;
-}
+#apply .inner{}
