@@ -27,6 +27,10 @@ a,i,h1,h2,h3,h4,h5,h6{
     font-size:inherit; color:inherit; line-height:inherit;
     font-family: 'iranSans',Tahoma;
 }
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
 ul,ol{
     list-style-type: none;
 }
@@ -58,7 +62,7 @@ input[disabled],
 .form_group_style1 *+.uk-grid-margin,
 .form_group_style1 .uk-grid+.uk-grid,
 .form_group_style1 .uk-grid>.uk-grid-margin{
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .form_group_style1 .fg1_title {
     font-size: 1.2rem;
@@ -152,6 +156,9 @@ input[disabled],
     color: #fff;
     cursor: pointer;
 }
+.btn_style1:hover{
+    color: #fff;
+}
 .btn_style1.bg_purple{
     background-color: #66339f;
     border-color: #66339f;
@@ -167,6 +174,66 @@ input[disabled],
 .btn_style1.bg_gray:hover{
     background-color: #c3c2c2;
 }
+
+/*#1*/
+.progress_tracker_style1{
+    margin: 0 0 35px 0;
+}
+.progress_tracker_style1 .pts1_step{
+    position: relative;
+    min-width: 120px;
+    text-align: center;
+}
+.progress_tracker_style1 .pts1_step:after{
+    content: '';
+    width: 320px;
+    height: 1px;
+    background: #cacaca;
+    display: inline-block;
+    position: absolute;
+    vertical-align: middle;
+    top: 8px;
+    left: 70%;
+
+}
+.progress_tracker_style1 .pts1_step.active:after{
+    background: #66339f;
+}
+.progress_tracker_style1 li:first-child .pts1_step:after{
+    content: none;
+}
+.progress_tracker_style1 .pts1_shape{
+    margin: 10px auto;
+    display: block;
+    border: 2px solid #b9b7b7;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+.progress_tracker_style1 .pts1_step.pass .pts1_shape,
+.progress_tracker_style1 .pts1_step.active .pts1_shape{
+    border-color: #66339f;
+}
+.progress_tracker_style1 .pts1_step.pass .pts1_shape:before{
+    content: '';
+    background:transparent url("../images/icon/checked.svg") no-repeat center center / contain;
+    display: inline-block;
+    width: 10px;
+    height: 12px;
+}
+.progress_tracker_style1 .pts1_step.pass .pts1_shape{
+    background:  #66339f;
+}
+.progress_tracker_style1 .pts1_text{
+    margin: 0;
+    font-size: 0.95rem;
+    color: #b9b7b7;
+}
+.progress_tracker_style1 .pts1_step.pass .pts1_text,
+.progress_tracker_style1 .pts1_step.active .pts1_text{
+    color: #66339f;
+}
+
 /************************************/
 /*************** MAIN **************/
 /*********************************/
