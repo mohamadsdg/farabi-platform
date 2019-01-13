@@ -97,6 +97,11 @@ input[disabled],
     top: 0;
     font-size: 75%;
 }
+.form_style1 .fs1_label.opt:after{
+    content: '( اختیاری )';
+    font-size: 75%;
+    opacity: 0.7;
+}
 .form_style1 input[type='text'],
 .form_style1 textarea{
     font-family: 'iranSans';
@@ -121,6 +126,29 @@ input[disabled],
 .form_style1 .wrapper_check{
     padding: 15px;
     background: #f9f9f9;
+}
+
+.form_style1 .fs1_action {
+    padding: 0 !important;
+    width: initial !important;
+    display: inline-block;
+    position: absolute;
+    left: -40px;
+    bottom: 8px;
+    font-size: 0.8rem;
+}
+.form_style1 .fs1_action.add {
+    color: #1e87f0;
+}
+.form_style1 .fs1_action.add:before{
+    border-bottom-color: #1e87f0;
+}
+.form_style1 .fs1_action.remove {
+    color: #ff345a;
+    font-size: 0.85rem;
+}
+.form_style1 .fs1_action.remove:before{
+    border-bottom-color: #ff345a;
 }
 
 /*#1*/
