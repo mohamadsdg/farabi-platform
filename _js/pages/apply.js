@@ -60,12 +60,18 @@
        * show hidden field input
        *
        * */
-
-        var $TargetRadio = $('input[data-active]');
-        $.each($TargetRadio,function () {
-            $TargetRadio.on('change',function () {
-                console.log(this);
-            })
+        var $TargetRadio = $('input[data-target-input]');
+        $TargetRadio.on('change', function () {
+            var $getVal = this.value ;
+            var $targetInput = $(this).data('target-input');
+            // var $targetInput ;
+            if ($getVal === '1') {
+                $($targetInput).show();
+            } else if ($getVal === '0') {
+                $($targetInput).hide();
+            } else {
+                console.log('invalid value of radio');
+            }
         })
 
     });

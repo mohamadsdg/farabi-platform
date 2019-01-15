@@ -604,18 +604,20 @@
                                             <div class="uk-display-inline-block uk-margin-small-right">
                                                 <div class="uk-display-inline-block check_style1">
                                                     <label>
-                                                        <input class="uk-radio" type="radio" name="trial_v" data-active="#s3"/>
+                                                        <input class="uk-radio" type="radio" name="trial_v" value="1"
+                                                               data-target-input="#s3"/>
                                                         بله
                                                     </label>
                                                 </div>
                                                 <div class="uk-display-inline-block check_style1 uk-margin-small-right">
                                                     <label>
-                                                        <input class="uk-radio" type="radio" name="trial_v"/>
+                                                        <input class="uk-radio" type="radio" name="trial_v" value="0"
+                                                               data-target-input="#s3"/>
                                                         خیر
                                                     </label>
                                                 </div>
                                             </div>
-                                            <input type="text" id="s3" autocomplete="off" hidden/>
+                                            <input type="text" id="s3" autocomplete="off" style="display: none"/>
                                         </li>
                                         <!--<li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req" for="s4">توضیح دهید که چرا این ایده را انتخاب
@@ -635,12 +637,46 @@
                                             </label>
                                             <textarea id="s6" data-autosize></textarea>
                                         </li>
-                                        <li class="fs1_item uk-width-1-1">
+                                        <!--<li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req" for="s7">
                                                 آیا تا کنون شرکتی برای ایده ثبت شده است؟ اگر بله سهام هر کدام از اعضای
                                                 تیم به چه شکل است؟ آیا دفتر کاری در حال حاضر دارید؟
                                             </label>
                                             <textarea id="s7" data-autosize></textarea>
+                                        </li>-->
+                                        <li class="fs1_item uk-width-1-1">
+                                            <label class="fs1_label req" for="s10">
+                                                آیا تا کنون شرکتی برای ایده ثبت شده است؟
+                                            </label>
+                                            <div class="uk-display-inline-block uk-margin-small-right">
+                                                <div class="uk-display-inline-block check_style1">
+                                                    <label>
+                                                        <input class="uk-radio" type="radio" name="trial_v" value="1"
+                                                               data-target-input="#s10"/>
+                                                        بله
+                                                    </label>
+                                                </div>
+                                                <div class="uk-display-inline-block check_style1 uk-margin-small-right">
+                                                    <label>
+                                                        <input class="uk-radio" type="radio" name="trial_v" value="0"
+                                                               data-target-input="#s10"/>
+                                                        خیر
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div id="s10" style="display: none">
+                                                <div data-uk-grid>
+                                                    <div class="fs1_item uk-width-1-2">
+                                                        <label class="fs1_label" for="s11">نام شرکت</label>
+                                                        <input type="text" id="s11" autocomplete="off"/>
+                                                    </div>
+                                                    <div class="fs1_item uk-width-1-2">
+                                                        <label class="fs1_label" for="s12">شماره ثبت</label>
+                                                        <input type="text" id="s12" autocomplete="off"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<textarea id="s10" data-autosize></textarea>-->
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req" for="s8">
