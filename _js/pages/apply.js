@@ -72,7 +72,44 @@
             } else {
                 console.log('invalid value of radio');
             }
-        })
+        });
+
+
+        /*
+       *
+       * setup Calender
+       *
+       * */
+        //element`s
+        var _parentElm = $('[data-wrapper-start]');
+        var _selectDatePicker = _parentElm.find('input');
+        //dynamic setup option
+        var isRtl = true ; //$thisClass.props.gregorian; // data from store
+        var dateFormat = isRtl ? 'jYYYY/jMM/jDD' : 'YYYY/MM/DD';
+        var dir = isRtl ? 'rtl' : 'ltr';
+        var isSingle = true;
+        _selectDatePicker.daterangepicker({
+            singleDatePicker: isSingle,
+            timePicker: false,
+            showDropdowns: true,
+            autoUpdateInput: true,
+            minDate: moment().subtract(100, 'years'),
+            maxDate: moment(),
+            opens: 'center',
+            locale: {
+                direction: dir,
+                format: dateFormat
+            },
+            jalaali: isRtl,
+
+        });
+        // Method
+        _selectDatePicker.on('apply.daterangepicker', function (ev, picker) {
+            //-- formation
+            var birthdate = picker.startDate.format(dateFormat);
+            _selectDatePicker.val(birthdate);
+
+        });
 
     });
 })(jQuery);
