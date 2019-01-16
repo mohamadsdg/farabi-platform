@@ -212,6 +212,14 @@ input[disabled],
     background-color: #c3c2c2;
 }
 
+.btn_style1:disabled{
+    background-color: transparent;
+    color: #999;
+    border-color: #e5e5e5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /*#1*/
 .progress_tracker_style1{
     margin: 0 0 35px 0;
@@ -273,6 +281,18 @@ input[disabled],
 }
 .progress_tracker_style1 .pts1_step.active .pts1_text{
     font-weight: bold;
+}
+
+/*#2*/
+.modal_style1{}
+.modal_style1 .ms1_title{
+    font-size: 1.2rem;
+    color: #333;
+}
+.modal_style1 .ms1_body{
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 27px;
 }
 
 /************************************/

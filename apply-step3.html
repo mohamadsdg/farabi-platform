@@ -55,7 +55,8 @@
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label req" for="s1">تاریخ شروع فعالیت</label>
                                             <div data-wrapper-start>
-                                                <input type="text" class="uk-text-center" readOnly id="s1" autocomplete="off"/>
+                                                <input type="text" class="uk-text-center" readOnly id="s1"
+                                                       autocomplete="off"/>
                                             </div>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
@@ -505,41 +506,42 @@
                                             <ul class="uk-flex uk-flex-middle uk-child-width-1-5 wrapper_check">
                                                 <li class="check_style1">
                                                     <label class="en_word">
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="hidden">
                                                         B2B
                                                     </label>
                                                 </li>
                                                 <li class="check_style1">
                                                     <label class="en_word">
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="hidden">
                                                         B2B2C
                                                     </label>
                                                 </li>
                                                 <li class="check_style1">
                                                     <label class="en_word">
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="hidden">
                                                         B2C
                                                     </label>
                                                 </li>
                                                 <li class="check_style1">
                                                     <label class="en_word">
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="hidden">
                                                         C2C
                                                     </label>
                                                 </li>
                                                 <li class="check_style1">
                                                     <label class="en_word">
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="hidden">
                                                         C2G
                                                     </label>
                                                 </li>
                                                 <li class="check_style1">
                                                     <label>
-                                                        <input class="uk-checkbox" type="checkbox">
+                                                        <input class="uk-radio" type="radio" name="type_business" data-target-input="#s13" data-action-input="show">
                                                         دیگر
                                                     </label>
                                                 </li>
                                             </ul>
+                                            <input type="text" id="s13" placeholder="نوع کسب و کار خود را بنویسید ..." autocomplete="off" style="display: none"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req">كدام يك از موارد زير در استارتاپ شما وجود دارد
@@ -548,25 +550,25 @@
                                                 <li>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             فقط يك ايده
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             در حال ساخت محصول
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             كمينه مجصول پذيرفتني(MVP)
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             به تازگي وارد بازار شده
                                                         </label>
                                                     </div>
@@ -574,25 +576,25 @@
                                                 <li>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             محصول كامل با مشتريان اوليه
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox">
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             محصول كامل با مشتريان متعدد
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type="checkbox" checked>
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             در حال رشد سريع
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
                                                         <label>
-                                                            <input class="uk-checkbox" type=checkbox>
+                                                            <input class="uk-radio" type="radio" name="stage">
                                                             در مرحله بلوغ نهايي
                                                         </label>
                                                     </div>
@@ -606,20 +608,23 @@
                                             <div class="uk-display-inline-block uk-margin-small-right">
                                                 <div class="uk-display-inline-block check_style1">
                                                     <label>
-                                                        <input class="uk-radio" type="radio" name="trial_v" value="1"
-                                                               data-target-input="#s3"/>
+                                                        <input class="uk-radio"
+                                                               type="radio" name="trial_v" value="1"
+                                                               data-target-input="#s3"
+                                                               data-action-input="show"/>
                                                         بله
                                                     </label>
                                                 </div>
                                                 <div class="uk-display-inline-block check_style1 uk-margin-small-right">
                                                     <label>
                                                         <input class="uk-radio" type="radio" name="trial_v" value="0"
-                                                               data-target-input="#s3"/>
+                                                               data-target-input="#s3"
+                                                               data-action-input="hidden"/>
                                                         خیر
                                                     </label>
                                                 </div>
                                             </div>
-                                            <input type="text" id="s3" autocomplete="off" style="display: none"/>
+                                            <input type="text" placeholder="لینک آن را وارد نمایید " id="s3" autocomplete="off" style="display: none"/>
                                         </li>
                                         <!--<li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req" for="s4">توضیح دهید که چرا این ایده را انتخاب
@@ -653,15 +658,19 @@
                                             <div class="uk-display-inline-block uk-margin-small-right">
                                                 <div class="uk-display-inline-block check_style1">
                                                     <label>
-                                                        <input class="uk-radio" type="radio" name="trial_v" value="1"
-                                                               data-target-input="#s10"/>
+                                                        <input class="uk-radio"
+                                                               type="radio"
+                                                               name="has_company" value="1"
+                                                               data-target-input="#s10" data-action-input="show"/>
                                                         بله
                                                     </label>
                                                 </div>
                                                 <div class="uk-display-inline-block check_style1 uk-margin-small-right">
                                                     <label>
-                                                        <input class="uk-radio" type="radio" name="trial_v" value="0"
-                                                               data-target-input="#s10"/>
+                                                        <input class="uk-radio"
+                                                               type="radio"
+                                                               name="has_company" value="0"
+                                                               data-target-input="#s10" data-action-input="hidden"/>
                                                         خیر
                                                     </label>
                                                 </div>
@@ -699,7 +708,7 @@
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
                             <a href="apply-step2.html" class="btn_style1 bg_gray">بازگشت</a>
-                            <a href="#" class="btn_style1 bg_purple">ثبت</a>
+                            <a href="#modal-policy" data-uk-toggle class="btn_style1 bg_purple">ثبت</a>
                         </div>
                     </form>
                 </div>
@@ -709,6 +718,27 @@
 </main>
 
 <!--========Footer==========-->
+<!--========Modal===========-->
+<div id="modal-policy" data-uk-modal class="modal_style1">
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="ms1_title">قوانین و شرایط</h2>
+        <p class="ms1_body">
+            اینجانب <span>--------</span>
+            با مطالعه ی کامل قوانین و شرایط شتابدهنده ستارگان فارابی نسبت به ثبت نام اولیه شتابدهنده اقدام نموده ایم.
+            این ثبت نام هیچ گونه حق یا حقوقی برای بنده ایجاد نمی نماید و در حین انجام پروسه های اداری و عقد قرار داد
+            نسبت به حقوق خود مطلع خواهم شد.
+        </p>
+        <div class="ms1_footer uk-text-left uk-margin-medium-top">
+            <div class="check_style1">
+                <label>
+                    <input class="uk-checkbox" type="checkbox" name="policy">
+                    با این شرایط موافقم
+                </label>
+            </div>
+            <button class="btn_style1 bg_purple" type="button" disabled data-target="policy">ثبت و تایید نهایی</button>
+        </div>
+    </div>
+</div>
 <!--========Asset===========-->
 <script src="_js/jquery-3.3.1.min.js"></script>
 <script src="_framework/uikit-3.0.0/js/uikit.min.js"></script>
