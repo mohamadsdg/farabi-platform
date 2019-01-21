@@ -1,0 +1,22 @@
+<?php
+
+Route::group(['namespace' => 'Frontend'], function () {
+
+    // Home
+    Route::get('/', ['as' => 'frontend.home.index', 'uses' => 'HomeController@index']);
+
+
+    // Startup
+    Route::group(['namespace' => 'Startup', 'prefix' => 'startup'], function () {
+        Route::get('/', function () {
+            return 'startup section';
+        });
+
+        // Register
+        Route::get('/register/step/founder', ['as' => 'frontend.startup.register.form', 'uses' => 'RegisterController@founder']);
+        Route::get('/register/step/team', ['as' => 'frontend.startup.register.team', 'uses' => 'RegisterController@team']);
+        Route::get('/register/step/complete', ['as' => 'frontend.startup.register.complete', 'uses' => 'RegisterController@complete']);
+
+    });
+
+});
