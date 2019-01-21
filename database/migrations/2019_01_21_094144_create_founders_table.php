@@ -23,6 +23,7 @@ class CreateFoundersTable extends Migration
             $table->enum('soldiership_status', ['معافیت', 'مشمول', 'اتمام خدمت'])->nullable();
             $table->text('achievement')->nullable();
             $table->unsignedInteger('user_id');
+            $table->boolean('is_completed')->default(false);
             $table->timestamps();
         });
     }

@@ -41,6 +41,7 @@ class CreateStartupsTable extends Migration
             $table->text('description');
             $table->unsignedInteger('team_id');
             $table->unsignedInteger('founder_id');
+            $table->boolean('is_completed')->default(false);
             $table->softDeletes();
             $table->timestamps();
         });
