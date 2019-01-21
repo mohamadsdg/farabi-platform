@@ -30,4 +30,9 @@ class Founder extends Model
     {
         return $this->belongsTo(Grade::class);
     }
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 }
