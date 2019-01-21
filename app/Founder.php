@@ -35,4 +35,9 @@ class Founder extends Model
     {
         return $this->belongsToMany(Skill::class);
     }
+
+    public function startup()
+    {
+        return $this->hasOne(Startup::class);
+    }
 }

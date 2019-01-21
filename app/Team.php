@@ -21,4 +21,9 @@ class Team extends Model
     {
         return $this->hasMany(Member::class);
     }
+
+    public function startup()
+    {
+        return $this->belongsTo(Startup::class);
+    }
 }
