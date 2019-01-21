@@ -39,4 +39,9 @@ class Startup extends Model
     {
         return $this->belongsToMany(Domain::class);
     }
+
+    public function props()
+    {
+        return $this->belongsToMany(Prop::class);
+    }
 }
