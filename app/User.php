@@ -27,4 +27,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function founder()
+    {
+        return $this->hasOne(Founder::class);
+    }
+
+    public function member()
+    {
+        return $this->hasOne(Member::class);
+    }
 }
