@@ -34,4 +34,9 @@ class Startup extends Model
     {
         return $this->hasOne(Team::class);
     }
+
+    public function domains()
+    {
+        return $this->belongsToMany(Domain::class);
+    }
 }
