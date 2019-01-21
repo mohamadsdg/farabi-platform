@@ -50,25 +50,23 @@
                                             <label class="fs1_label" for="p9">مقطع تحصیلی</label>
                                             <select name="" id="p9">
                                                 <option disabled selected>-- انتخاب نمایید --</option>
-                                                <option value="0">دیپلم</option>
-                                                <option value="1">کارشناسی</option>
-                                                <option value="2">کارشناسی ارشد</option>
-                                                <option value="3">دکتری</option>
-                                                <option value="5">سایر ...</option>
+                                                @if(isset($data['grade']))
+                                                    @foreach($data['grade'] as $grade)
+                                                        <option value="{{ $grade->id }}">{{ $grade->title }}</option>
+                                                    @endforeach
+                                                @endif
                                             </select>
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="p2">دانشگاه</label>
                                             <select name="" id="p2">
                                                 <option disabled selected>-- انتخاب نمایید --</option>
-                                                <option value="0">تهران</option>
-                                                <option value="1">شهید بهشتی</option>
-                                                <option value="2">شریف</option>
-                                                <option value="3">امیر کبیر</option>
-                                                <option value="4">خواجه نصیر</option>
-                                                <option value="5">علامه طباطبایی</option>
-                                                <option value="6">آزاد</option>
-                                                <option value="7">سایر ...</option>
+                                                @if(isset($data['university']))
+                                                    @foreach($data['university'] as $university)
+                                                        <option
+                                                            value="{{ $university->id }}">{{ $university->name }}</option>
+                                                    @endforeach
+                                                @endif
                                             </select>
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
@@ -121,55 +119,19 @@
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label">تخصص شما در کدام حوزه است ؟</label>
                                             <ul class="uk-flex  uk-flex-around">
-                                                <li>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox"> توسعه
-                                                            استارتاپ </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">طراحی</label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">فنی </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">مالی </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox"> سرمایه گذاري
-                                                            و
-                                                            جذب منابع </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">ماركتینگ
-                                                        </label>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">اجراي
-                                                            عملیات</label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">مدیریت
-                                                            محصول</label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">فروش </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">استراتژي
-                                                        </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">ساخت تجربه
-                                                            كاربري
-                                                        </label>
-                                                    </div>
-                                                    <div class="check_style1">
-                                                        <label><input class="uk-checkbox" type="checkbox">حقوقی</label>
-                                                    </div>
-                                                </li>
+                                                @if(isset($data['skill']))
+                                                    @foreach($data['skill'] as $skillGroup)
+                                                        <li>
+                                                            @foreach($skillGroup as $skill)
+                                                                <div class="check_style1">
+                                                                    <label>
+                                                                        <input class="uk-checkbox" type="checkbox">{{ $skill->title }}
+                                                                    </label>
+                                                                </div>
+                                                            @endforeach
+                                                        </li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">

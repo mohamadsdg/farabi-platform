@@ -21,12 +21,6 @@ class SkillTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'توسعه استارتاپ',
-                'display' => 1,
-                'position' => 1,
-                'created_at' => \Carbon\Carbon::now()
-            ],
-            [
                 'title' => 'اجرای عملیات',
                 'display' => 1,
                 'position' => 1,
@@ -58,12 +52,6 @@ class SkillTableSeeder extends Seeder
             ],
             [
                 'title' => 'مالی',
-                'display' => 1,
-                'position' => 1,
-                'created_at' => \Carbon\Carbon::now()
-            ],
-            [
-                'title' => 'استراتژی',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers\Frontend\Startup;
 
+use App\Grade;
 use App\Http\Controllers\Controller;
+use App\Skill;
+use App\University;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -10,6 +13,10 @@ class RegisterController extends Controller
     public function founder()
     {
         $data = [];
+        $data['skill'] = Skill::all()->split(2);
+        $data['grade'] = Grade::all();
+        $data['university'] = University::all();
+
         return view('frontend.startup.register.founder-form', compact('data'));
     }
 
