@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Skill;
+use App\Prop;
 
-class SkillTableSeeder extends Seeder
+class PropsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,75 +13,87 @@ class SkillTableSeeder extends Seeder
     public function run()
     {
         // insert default values
-        Skill::insert([
+        Prop::insert([
             [
-                'title' => 'توسعه استارتاپ',
+                'title' => 'Augmented Reality',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'اجرای عملیات',
+                'title' => 'Machine Learning',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'طراحی',
+                'title' => 'Mobile app',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'مدیریت محصول',
+                'title' => 'SaaS',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'فنی',
+                'title' => 'Telecom',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'فروش',
+                'title' => 'Cloud',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'مالی',
+                'title' => 'Robotics',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'استراتژی',
+                'title' => 'Data Science',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'سرمایه گذاری و جذب منابع',
+                'title' => 'Block Chain',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'ساخت تجربه کاربری',
+                'title' => 'Big Data',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'مارکتینگ',
+                'title' => 'Virtual Reality',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'حقوقی',
+                'title' => 'New Technologies',
+                'display' => 1,
+                'position' => 1,
+                'created_at' => \Carbon\Carbon::now()
+            ],
+            [
+                'title' => 'IoT',
+                'display' => 1,
+                'position' => 1,
+                'created_at' => \Carbon\Carbon::now()
+            ],
+            [
+                'title' => 'Artificial Intelligent',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()

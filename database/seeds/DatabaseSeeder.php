@@ -13,7 +13,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(GradesTableSeeder::class);
         $this->call(UniversitiesTableSeeder::class);
-        $this->call(SkillTableSeeder::class);
-        $this->call(DomainTableSeeder::class);
+        $this->call(SkillsTableSeeder::class);
+        $this->call(DomainsTableSeeder::class);
+        $this->call(PropsTableSeeder::class);
     }
 }

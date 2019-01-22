@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Domain;
 
-class DomainTableSeeder extends Seeder
+class DomainsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
