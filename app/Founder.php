@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Founder extends Model
 {
-    protected $table = 'grades';
+    protected $table = 'founders';
     protected $fillable = [
         'first_name',
         'last_name',

@@ -33,22 +33,23 @@
                             </li>
                         </ul>
                     </div>
-                    <form>
+                    <form action="{{ route('frontend.startup.register.founder') }}" method="POST">
+                        @csrf
                         <div class="form_group_style1">
                             <div class="fg1_inner">
                                 <div class="form_style1">
                                     <ul data-uk-grid>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="p0">نام </label>
-                                            <input type="text" id="p0" autocomplete="off"/>
+                                            <input name="first_name" type="text" id="p0" autocomplete="off"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="p00">نام خانوادگی</label>
-                                            <input type="text" id="p00" autocomplete="off"/>
+                                            <input name="last_name" type="text" id="p00" autocomplete="off"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="p9">مقطع تحصیلی</label>
-                                            <select name="" id="p9">
+                                            <select name="grade_id" id="p9">
                                                 <option disabled selected>-- انتخاب نمایید --</option>
                                                 @if(isset($data['grade']))
                                                     @foreach($data['grade'] as $grade)
@@ -59,7 +60,7 @@
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="p2">دانشگاه</label>
-                                            <select name="" id="p2">
+                                            <select name="university_id" id="p2">
                                                 <option disabled selected>-- انتخاب نمایید --</option>
                                                 @if(isset($data['university']))
                                                     @foreach($data['university'] as $university)
@@ -71,15 +72,15 @@
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="p1">رشته تحصیلی</label>
-                                            <input type="text" id="p1" autocomplete="off"/>
+                                            <input name="major" type="text" id="p1" autocomplete="off"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="p5">نشانی ایمیل</label>
-                                            <input type="text" id="p5" autocomplete="off"/>
+                                            <input name="email" type="text" id="p5" autocomplete="off"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="p4">شماره همراه</label>
-                                            <input type="text" id="p4" autocomplete="off"/>
+                                            <input name="mobile" type="text" id="p4" autocomplete="off"/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="p33">
@@ -91,6 +92,7 @@
                                                         <input class="uk-radio"
                                                                type="radio"
                                                                name="gender"
+                                                               value="male"
                                                                data-target-input="#p33" data-action-input="show"/>
                                                         مرد
                                                     </label>
@@ -100,6 +102,7 @@
                                                         <input class="uk-radio"
                                                                type="radio"
                                                                name="gender"
+                                                               value="female"
                                                                data-target-input="#p33" data-action-input="hidden"/>
                                                         زن
                                                     </label>
@@ -107,7 +110,7 @@
                                             </div>
                                             <div id="p33" style="display:none">
                                                 <label class="fs1_label" for="p3">وضعیت نظام وظیفه</label>
-                                                <select name="" id="p3">
+                                                <select name="soldiership_status" id="p3">
                                                     <option disabled selected>-- انتخاب نمایید --</option>
                                                     <option value="0">معافیت دائم</option>
                                                     <option value="1">معافیت موقت</option>
@@ -125,7 +128,9 @@
                                                             @foreach($skillGroup as $skill)
                                                                 <div class="check_style1">
                                                                     <label>
-                                                                        <input class="uk-checkbox" type="checkbox">{{ $skill->title }}
+                                                                        <input name="skills[]" value="{{ $skill->id }}"
+                                                                               class="uk-checkbox"
+                                                                               type="checkbox">{{ $skill->title }}
                                                                     </label>
                                                                 </div>
                                                             @endforeach
@@ -137,14 +142,14 @@
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label opt" for="p6">مهمترین دستاورد شما تا حالا چه چیزی
                                                 بوده ؟ </label>
-                                            <textarea id="p6" data-autosize></textarea>
+                                            <textarea name="achievement" id="p6" data-autosize></textarea>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-row-reverse">
-                            <a href="apply-step2.html" class="btn_style1 bg_purple">تائید و ادامه</a>
+                            <button class="btn_style1 bg_purple">تائید و ادامه</button>
                         </div>
                     </form>
                 </div>
