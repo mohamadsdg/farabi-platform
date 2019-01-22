@@ -14,10 +14,13 @@
     @yield('content')
 </main>
 <!--========Footer==========-->
+
 <!--========Asset===========-->
 <script src="{{ asset('assets/frontend/_js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/_framework/uikit-3.0.0/js/uikit.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/_js/pages/apply.js') }}"></script>
+@yield('js')
+
 
 </body>
 </html>

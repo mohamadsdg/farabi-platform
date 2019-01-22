@@ -6,6 +6,7 @@ use App\Grade;
 use App\Http\Controllers\Controller;
 use App\Skill;
 use App\University;
+use App\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -16,6 +17,8 @@ class RegisterController extends Controller
         $data['skill'] = Skill::all()->split(2);
         $data['grade'] = Grade::all();
         $data['university'] = University::all();
+
+        $users = User::active()->get();
 
         return view('frontend.startup.register.founder-form', compact('data'));
     }

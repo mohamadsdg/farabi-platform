@@ -28,6 +28,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', true);
+    }
+
     public function founder()
     {
         return $this->hasOne(Founder::class);
