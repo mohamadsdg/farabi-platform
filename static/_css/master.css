@@ -80,6 +80,9 @@ input[disabled],
 .form_style1{
     padding: 0 12%;
 }
+.form_style1 .fs1_item{
+    position: relative;
+}
 .form_style1 .fs1_label{
     display: inline-block;
     font-size: 0.95rem;
@@ -127,6 +130,15 @@ input[disabled],
 .form_style1 .wrapper_check{
     padding: 15px;
     background: #f9f9f9;
+}
+.form_style1 label.error_style1{
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: #ff3359;
+    font-size: 0.75rem;
+    background: #fff5f5;
+    padding: 0 5px;
 }
 
 .form_style1 .fs1_action {
