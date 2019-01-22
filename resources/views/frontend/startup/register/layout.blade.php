@@ -19,6 +19,11 @@
 <script src="{{ asset('assets/frontend/_js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/_framework/uikit-3.0.0/js/uikit.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/_js/pages/apply.js') }}"></script>
+<!--========Developer===========-->
+<script src="{{ asset('assets/global/function.js') }}"></script>
+<!--========Notification===========-->
+@include('global.developer.notification.iziToast.iziToast')
+<!--========PageJS===========-->
 @yield('js')
 
 
