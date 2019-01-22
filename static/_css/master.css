@@ -38,7 +38,6 @@ input,textarea{outline: 0 none;}
 input,textarea,a,i{-webkit-transition:all .4s;transition:all .4s;}
 textarea{resize:none;}
 select option{padding:0 10px;line-height:25px;}
-input.error, textarea.error{border:1px dotted #FF0000;}
 input[type=submit],
 input[type=checkbox],
 input[type=radio],
@@ -140,6 +139,8 @@ input[disabled],
     background: #fff5f5;
     padding: 0 5px;
 }
+.form_style1 label.error_style1[for='skill']{top: 0;}
+.form_style1 label.error_style1[for='soldiership_status']{top: 45px;}
 
 .form_style1 .fs1_action {
     padding: 0 !important;

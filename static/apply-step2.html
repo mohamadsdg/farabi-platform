@@ -42,7 +42,7 @@
                             </li>
                         </ul>
                     </div>
-                    <form>
+                    <form data-valid->
                         <div class="form_group_style1">
                             <div class="fg1_inner">
                                 <div class="form_style1">
@@ -63,7 +63,7 @@
                                         <li class="fs1_item uk-width-1-1">
                                             <div data-uk-grid class="uk-child-width-1-1">
                                                 <div>
-                                                    <label class="fs1_label req" for="t11">
+                                                    <label class="fs1_label" for="t11">
                                                         سابقه فعالیت تیمی به غیر از استارتاپ فعلی ومدت زمان شناخت موسس
                                                         از
                                                         تیم ؟
@@ -71,11 +71,11 @@
                                                     <textarea id="t11" data-autosize></textarea>
                                                 </div>
                                                 <div>
-                                                    <label class="fs1_label req" for="t12">تعداد افراد شاغل در استارتاپ</label>
+                                                    <label class="fs1_label" for="t12">تعداد افراد شاغل در استارتاپ</label>
                                                     <input type="text" id="t12" autocomplete="off"/>
                                                 </div>
                                                 <div>
-                                                    <label class="fs1_label req" for="t13">
+                                                    <label class="fs1_label" for="t13">
                                                         نقش و شرح فعالیت هریك از اعضای تیم چیست و دلیل صلاحیت این فرد
                                                         برای
                                                         نقش خود را توضیح دهید ؟
@@ -85,7 +85,7 @@
                                             </div>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label req" for="t14">
+                                            <label class="fs1_label" for="t14">
                                                 نحوه فعالیت اعضای تیم شما چطونه است ؟
                                                 <small style="font-size: 75%">( تمام وقت / پاره وقت / از راه دور و...
                                                     نام
@@ -95,7 +95,7 @@
                                             <textarea id="t14" data-autosize></textarea>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label req" for="t15">
+                                            <label class="fs1_label" for="t15">
                                                 تیم خود را چگونه توصیف میکنید؟
                                                 <small>
                                                     (ویژگی بارز و یا تفاوت عمده شما با تیم هاي دیگر)
@@ -122,6 +122,9 @@
 <script src="_js/jquery-3.3.1.min.js"></script>
 <script src="_framework/uikit-3.0.0/js/uikit.min.js"></script>
 <script src="_js/pages/apply.js"></script>
+<script src="_plugin/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="_plugin/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="_plugin/jquery-validation/validate.js"></script>
 
 </body>
 </html>
