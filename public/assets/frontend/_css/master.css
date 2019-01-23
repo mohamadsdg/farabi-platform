@@ -1,74 +1,123 @@
 @font-face {
-  font-family: 'iranSans';
-  src: url('font/iranSans/Iransans.eot');
-  src: url('font/iranSans/Iransans.woff2') format('woff2'),
-       url('font/iranSans/Iransans.ttf') format('truetype'),
-       url('font/iranSans/Iransans.svg#sorinwd-IRANSans') format('svg'),
-       url('font/iranSans/Iransans.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'iranSans';
+    src: url('font/iranSans/Iransans.eot');
+    src: url('font/iranSans/Iransans.woff2') format('woff2'),
+    url('font/iranSans/Iransans.ttf') format('truetype'),
+    url('font/iranSans/Iransans.svg#sorinwd-IRANSans') format('svg'),
+    url('font/iranSans/Iransans.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
 }
+
 /************************************/
 /************ DEFAULT *************/
 /*********************************/
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'iranSans'!important;
+    font-family: 'iranSans' !important;
 }
-img{border:0 none;}
-html{height:100%;font-size:14px;font-family: 'iranSans'!important;}
-body {position:relative;min-height:100%;}
-a,i,h1,h2,h3,h4,h5,h6{
-    text-decoration:none;
-    -webkit-transition:all .4s;
-    transition:all .4s;
-    font-size:inherit; color:inherit; line-height:inherit;
-    font-family: 'iranSans',Tahoma;
+
+img {
+    border: 0 none;
 }
-a:hover{
+
+html {
+    height: 100%;
+    font-size: 14px;
+    font-family: 'iranSans' !important;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+}
+
+a, i, h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    font-family: 'iranSans', Tahoma;
+}
+
+a:hover {
     text-decoration: none;
     color: inherit;
 }
-ul,ol{
+
+ul, ol {
     list-style-type: none;
 }
-input,textarea{outline: 0 none;}
-input,textarea,a,i{-webkit-transition:all .4s;transition:all .4s;}
-textarea{resize:none;}
-select option{padding:0 10px;line-height:25px;}
-input.error, textarea.error{border:1px dotted #FF0000;}
+
+input, textarea {
+    outline: 0 none;
+}
+
+input, textarea, a, i {
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+
+textarea {
+    resize: none;
+}
+
+select option {
+    padding: 0 10px;
+    line-height: 25px;
+}
+
 input[type=submit],
 input[type=checkbox],
 input[type=radio],
-label.choice{cursor:pointer;vertical-align:middle;}
+label.choice {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
 input[type=checkbox],
-input[type=radio]{margin-left:5px;}
+input[type=radio] {
+    margin-left: 5px;
+}
+
 input[disabled],
-.disabled,.disabled *{cursor:not-allowed !important;background-color: #eee !important;}
-.en_word{font-family: 'Verdana'!important;}
+.disabled, .disabled * {
+    cursor: not-allowed !important;
+    background-color: #eee !important;
+}
+
+.en_word {
+    font-family: 'Verdana' !important;
+}
 
 /************************************/
 /************* GENERAL *************/
 /*********************************/
-.form_all_group{
+.form_all_group {
     padding: 32px;
-        background: #f7f7f7;
+    background: #f7f7f7;
 }
+
 .form_group_style1 {
 
 }
-.form_group_style1 *+.uk-grid-margin,
-.form_group_style1 .uk-grid+.uk-grid,
-.form_group_style1 .uk-grid>.uk-grid-margin{
+
+.form_group_style1 * + .uk-grid-margin,
+.form_group_style1 .uk-grid + .uk-grid,
+.form_group_style1 .uk-grid > .uk-grid-margin {
     margin-top: 30px;
 }
+
 .form_group_style1 .fg1_title {
     font-size: 1.2rem;
     line-height: 1;
     color: rebeccapurple;
 }
+
 .form_group_style1 .fg1_inner {
     border: 1px solid #eee;
     border-radius: 4px;
@@ -77,10 +126,15 @@ input[disabled],
 }
 
 /*#1*/
-.form_style1{
+.form_style1 {
     padding: 0 12%;
 }
-.form_style1 .fs1_label{
+
+.form_style1 .fs1_item {
+    position: relative;
+}
+
+.form_style1 .fs1_label {
     display: inline-block;
     font-size: 0.95rem;
     line-height: 20px;
@@ -89,7 +143,8 @@ input[disabled],
     position: relative;
     padding-right: 6px;
 }
-.form_style1 .fs1_label.req:after{
+
+.form_style1 .fs1_label.req:after {
     content: '*';
     position: absolute;
     color: #f00;
@@ -97,14 +152,16 @@ input[disabled],
     top: 0;
     font-size: 75%;
 }
-.form_style1 .fs1_label.opt:after{
+
+.form_style1 .fs1_label.opt:after {
     content: '( اختیاری )';
     font-size: 75%;
     opacity: 0.7;
 }
+
 .form_style1 input[type='text'],
 .form_style1 textarea,
-.form_style1 select{
+.form_style1 select {
     font-family: 'iranSans';
     display: block;
     width: 100%;
@@ -116,17 +173,42 @@ input[disabled],
     transition: all 0.3s ease;
     color: #6f6f6f;
 }
-.form_style1 textarea{
+
+.form_style1 textarea {
     transition: none;
 }
-.form_style1 input[type='text']:focus{
+
+.form_style1 input[type='text']:focus {
     border-color: rgba(224, 224, 224, 1);
 }
-.form_style1 .fs1_btn{}
-.form_style1 .fs1_btn_acc{}
-.form_style1 .wrapper_check{
+
+.form_style1 .fs1_btn {
+}
+
+.form_style1 .fs1_btn_acc {
+}
+
+.form_style1 .wrapper_check {
     padding: 15px;
     background: #f9f9f9;
+}
+
+.form_style1 label.error_style1 {
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: #ff3359;
+    font-size: 0.75rem;
+    background: #fff5f5;
+    padding: 0 5px;
+}
+
+.form_style1 label.error_style1[for='skill'] {
+    top: 0;
+}
+
+.form_style1 label.error_style1[for='soldiership_status'] {
+    top: 45px;
 }
 
 .form_style1 .fs1_action {
@@ -138,46 +220,53 @@ input[disabled],
     bottom: 8px;
     font-size: 0.8rem;
 }
+
 .form_style1 .fs1_action.add {
     color: #1e87f0;
 }
-.form_style1 .fs1_action.add:before{
+
+.form_style1 .fs1_action.add:before {
     border-bottom-color: #1e87f0;
 }
+
 .form_style1 .fs1_action.remove {
     color: #ff345a;
     font-size: 0.85rem;
 }
-.form_style1 .fs1_action.remove:before{
+
+.form_style1 .fs1_action.remove:before {
     border-bottom-color: #ff345a;
 }
 
 /*#1*/
-.check_style1{
+.check_style1 {
     font-size: 0.9rem;
     margin: 10px 0;
 }
-.check_style1 > label{
+
+.check_style1 > label {
     cursor: pointer;
 }
+
 .check_style1 input[type='checkbox'],
-.check_style1 input[type='radio']{
+.check_style1 input[type='radio'] {
     height: 14px;
     width: 14px;
 }
 
 .check_style1 .uk-checkbox:checked,
 .check_style1 .uk-checkbox:indeterminate,
-.check_style1 .uk-radio:checked{
+.check_style1 .uk-radio:checked {
     background-color: #66339f;
 }
+
 .check_style1 .uk-checkbox:focus,
-.check_style1 .uk-radio:focus{
+.check_style1 .uk-radio:focus {
     border-color: #66339f;
 }
 
 /*#1*/
-.btn_style1{
+.btn_style1 {
     font-size: .85rem;
     line-height: 29px;
     padding: 0 15px;
@@ -189,30 +278,34 @@ input[disabled],
     text-decoration: none;
     text-transform: uppercase;
     transition: .1s ease-in-out;
-    transition-property: color,background-color,border-color;
+    transition-property: color, background-color, border-color;
     color: #fff;
     cursor: pointer;
 }
-.btn_style1:hover{
+
+.btn_style1:hover {
     color: #fff;
 }
-.btn_style1.bg_purple{
+
+.btn_style1.bg_purple {
     background-color: #66339f;
     border-color: #66339f;
 }
-.btn_style1.bg_purple:hover{
-    background: #57298a;
-;
+
+.btn_style1.bg_purple:hover {
+    background: #57298a;;
 }
-.btn_style1.bg_gray{
+
+.btn_style1.bg_gray {
     background-color: #ccc;
     border-color: #ccc;
 }
-.btn_style1.bg_gray:hover{
+
+.btn_style1.bg_gray:hover {
     background-color: #c3c2c2;
 }
 
-.btn_style1:disabled{
+.btn_style1:disabled {
     background-color: transparent;
     color: #999;
     border-color: #e5e5e5;
@@ -221,15 +314,17 @@ input[disabled],
 }
 
 /*#1*/
-.progress_tracker_style1{
+.progress_tracker_style1 {
     margin: 0 0 35px 0;
 }
-.progress_tracker_style1 .pts1_step{
+
+.progress_tracker_style1 .pts1_step {
     position: relative;
     min-width: 120px;
     text-align: center;
 }
-.progress_tracker_style1 .pts1_step:after{
+
+.progress_tracker_style1 .pts1_step:after {
     content: '';
     width: 320px;
     height: 1px;
@@ -241,14 +336,17 @@ input[disabled],
     left: 70%;
 
 }
+
 .progress_tracker_style1 .pts1_step.pass:after,
-.progress_tracker_style1 .pts1_step.active:after{
+.progress_tracker_style1 .pts1_step.active:after {
     background: #66339f;
 }
-.progress_tracker_style1 li:first-child .pts1_step:after{
+
+.progress_tracker_style1 li:first-child .pts1_step:after {
     content: none;
 }
-.progress_tracker_style1 .pts1_shape{
+
+.progress_tracker_style1 .pts1_shape {
     margin: 10px auto;
     display: block;
     border: 2px solid #b9b7b7;
@@ -256,40 +354,49 @@ input[disabled],
     height: 16px;
     border-radius: 50%;
 }
+
 .progress_tracker_style1 .pts1_step.pass .pts1_shape,
-.progress_tracker_style1 .pts1_step.active .pts1_shape{
+.progress_tracker_style1 .pts1_step.active .pts1_shape {
     border-color: #66339f;
 }
-.progress_tracker_style1 .pts1_step.pass .pts1_shape:before{
+
+.progress_tracker_style1 .pts1_step.pass .pts1_shape:before {
     content: '';
-    background:transparent url("../images/icon/checked.svg") no-repeat center center / contain;
+    background: transparent url("../images/icon/checked.svg") no-repeat center center / contain;
     display: inline-block;
     width: 10px;
     height: 12px;
 }
-.progress_tracker_style1 .pts1_step.pass .pts1_shape{
-    background:  #66339f;
+
+.progress_tracker_style1 .pts1_step.pass .pts1_shape {
+    background: #66339f;
 }
-.progress_tracker_style1 .pts1_text{
+
+.progress_tracker_style1 .pts1_text {
     margin: 0;
     font-size: 0.95rem;
     color: #b9b7b7;
 }
+
 .progress_tracker_style1 .pts1_step.pass .pts1_text,
-.progress_tracker_style1 .pts1_step.active .pts1_text{
+.progress_tracker_style1 .pts1_step.active .pts1_text {
     color: #66339f;
 }
-.progress_tracker_style1 .pts1_step.active .pts1_text{
+
+.progress_tracker_style1 .pts1_step.active .pts1_text {
     font-weight: bold;
 }
 
 /*#2*/
-.modal_style1{}
-.modal_style1 .ms1_title{
+.modal_style1 {
+}
+
+.modal_style1 .ms1_title {
     font-size: 1.2rem;
     color: #333;
 }
-.modal_style1 .ms1_body{
+
+.modal_style1 .ms1_body {
     text-align: justify;
     font-size: 1rem;
     line-height: 27px;
@@ -298,4 +405,5 @@ input[disabled],
 /************************************/
 /*************** MAIN **************/
 /*********************************/
-#apply .inner{}
+#apply .inner {
+}
