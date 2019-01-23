@@ -26,6 +26,7 @@ class RegisterController extends Controller
 
     public function doFounder(FounderRequest $request)
     {
+        // TODO ** check session for current step **
         // retrieve data
         $firstName = $request->get('first_name');
         $lastName = $request->get('last_name');
@@ -72,12 +73,18 @@ class RegisterController extends Controller
 
     public function team()
     {
-        $data = [];
-        return view('frontend.startup.register.team-form', compact('data'));
+        // TODO ** check session for current step **
+        return view('frontend.startup.register.team-form');
+    }
+
+    public function doTeam(Request $request)
+    {
+        return $request->all();
     }
 
     public function complete()
     {
+        // TODO ** check session for current step **
         $data = [];
         return view('frontend.startup.register.complete-form', compact('data'));
     }

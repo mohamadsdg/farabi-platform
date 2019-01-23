@@ -33,7 +33,8 @@
                             </li>
                         </ul>
                     </div>
-                    <form>
+                    <form action="{{ route('frontend.startup.register.team') }}" method="POST">
+                        @csrf
                         <div class="form_group_style1">
                             <div class="fg1_inner">
                                 <div class="form_style1">
@@ -43,11 +44,11 @@
                                                  data-item-member>
                                                 <div>
                                                     <label class="fs1_label" for="t0">نام و نام خانوادگی</label>
-                                                    <input type="text" id="t0" autocomplete="off"/>
+                                                    <input name="name[]" type="text" id="t0" autocomplete="off"/>
                                                 </div>
                                                 <div>
                                                     <label class="fs1_label " for="t7">سمت در تیم</label>
-                                                    <input type="text" id="t7" autocomplete="off"/>
+                                                    <input name="position[]" type="text" id="t7" autocomplete="off"/>
                                                 </div>
                                                 <a class="uk-button uk-button-text fs1_action add"
                                                    data-action-member='add'>افزودن</a>
@@ -61,12 +62,13 @@
                                                         از
                                                         تیم ؟
                                                     </label>
-                                                    <textarea id="t11" data-autosize></textarea>
+                                                    <textarea name="background" id="t11" data-autosize></textarea>
                                                 </div>
                                                 <div>
                                                     <label class="fs1_label req" for="t12">تعداد افراد شاغل در
                                                         استارتاپ</label>
-                                                    <input type="text" id="t12" autocomplete="off"/>
+                                                    <input name="employees_count" type="text" id="t12"
+                                                           autocomplete="off"/>
                                                 </div>
                                                 <div>
                                                     <label class="fs1_label req" for="t13">
@@ -74,7 +76,7 @@
                                                         برای
                                                         نقش خود را توضیح دهید ؟
                                                     </label>
-                                                    <textarea id="t13" data-autosize></textarea>
+                                                    <textarea name="introduction" id="t13" data-autosize></textarea>
                                                 </div>
                                             </div>
                                         </li>
@@ -86,7 +88,7 @@
                                                     هریک از اعضا - نوع فعالیت - توضیح كوتاهی از دلیل آن)
                                                 </small>
                                             </label>
-                                            <textarea id="t14" data-autosize></textarea>
+                                            <textarea name="teamwork" id="t14" data-autosize></textarea>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label req" for="t15">
@@ -95,15 +97,16 @@
                                                     (ویژگی بارز و یا تفاوت عمده شما با تیم هاي دیگر)
                                                 </small>
                                             </label>
-                                            <textarea id="t15" data-autosize></textarea>
+                                            <textarea name="description" id="t15" data-autosize></textarea>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
-                            <a href="apply.html" class="btn_style1 bg_gray">بازگشت</a>
-                            <a href="apply-step3.html" class="btn_style1 bg_purple">تائید و ادامه</a>
+                            <a href="{{ route('frontend.startup.register.founder') }}"
+                               class="btn_style1 bg_gray">بازگشت</a>
+                            <button class="btn_style1 bg_purple">تائید و ادامه</button>
                         </div>
                     </form>
                 </div>
