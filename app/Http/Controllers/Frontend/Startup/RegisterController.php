@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Startup\FounderRequest;
 use App\Prop;
 use App\Skill;
+use App\Team;
 use App\University;
 use App\User;
 use Illuminate\Http\Request;
@@ -81,7 +82,22 @@ class RegisterController extends Controller
 
     public function doTeam(Request $request)
     {
-        return $request->all();
+//        return $request->all();
+
+        // retrieve data
+        $members = $request->get('members');
+
+        // team data
+        $team = new Team();
+        $team->background = $request->get('background');
+        $team->employees_count = $request->get('employees_count');
+        $team->introduction = $request->get('introduction');
+        $team->teamwork = $request->get('teamwork');
+        $team->description = $request->get('description');
+        $team->save();
+
+        // members data
+        $team->members()->createMany($members);
     }
 
     public function complete()

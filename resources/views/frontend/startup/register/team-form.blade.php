@@ -44,11 +44,11 @@
                                                  data-item-member>
                                                 <div>
                                                     <label class="fs1_label" for="t0">نام و نام خانوادگی</label>
-                                                    <input type="text" id="t0" autocomplete="off"/>
+                                                    <input name="members[0][name]" type="text" id="t0" autocomplete="off"/>
                                                 </div>
                                                 <div>
                                                     <label class="fs1_label " for="t7">سمت در تیم</label>
-                                                    <input type="text" id="t7" autocomplete="off"/>
+                                                    <input name="members[0][position]" type="text" id="t7" autocomplete="off"/>
                                                 </div>
                                                 <a class="uk-button uk-button-text fs1_action add"
                                                    data-action-member='add'>افزودن</a>

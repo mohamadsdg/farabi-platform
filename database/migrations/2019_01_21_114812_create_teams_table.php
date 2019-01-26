@@ -15,13 +15,13 @@ class CreateTeamsTable extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 128);
+            $table->string('name', 128)->nullable();
             $table->text('background');
             $table->integer('employees_count');
             $table->text('introduction');
             $table->text('teamwork');
             $table->text('description');
-            $table->unsignedInteger('startup_id');
+            $table->unsignedInteger('startup_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
