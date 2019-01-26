@@ -98,31 +98,30 @@
                                                         </li>
                                                     @endforeach
                                                 @endif
-
-                                                <li>
-                                                    <div class="check_style1">
-                                                        <label class="en_word">
-                                                            <input name="domain" class="uk-checkbox" type="checkbox"
-                                                                   data-valid-min="7" data-valid-max="12">
-                                                            CRM
-                                                        </label>
-                                                    </div>
-                                                </li>
                                             </ul>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label">كدام يك از موارد زير در استارتاپ شما وجود دارد
                                                 ؟</label>
                                             <ul class="uk-flex uk-child-width-1-4 wrapper_check">
-                                                <li>
-                                                    <div class="check_style1">
-                                                        <label class="en_word">
-                                                            <input name="props" class="uk-checkbox" type="checkbox"
-                                                                   data-valid-min="3" data-valid-max="5">
-                                                            Augmented Reality
-                                                        </label>
-                                                    </div>
-                                                </li>
+                                                @if(isset($data['prop']))
+                                                    @foreach($data['prop'] as $propGroup)
+                                                        <li>
+                                                            @foreach($propGroup as $prop)
+                                                                <div class="check_style1">
+                                                                    <label class="en_word">
+                                                                        <input name="props[]"
+                                                                               value="{{ $prop->id }}"
+                                                                               class="uk-checkbox" type="checkbox"
+                                                                               data-valid-min="7"
+                                                                               data-valid-max="12">
+                                                                        {{ $prop->title }}
+                                                                    </label>
+                                                                </div>
+                                                            @endforeach
+                                                        </li>
+                                                    @endforeach
+                                                @endif
                                             </ul>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">

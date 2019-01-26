@@ -13,8 +13,22 @@ class Prop extends Model
         'display'
     ];
 
+    /*
+     * Relationship
+     */
+
     public function startups()
     {
         return $this->belongsToMany(Startup::class);
     }
+
+    /*
+     * Accessor
+     */
+
+    public function getTitleAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
 }
