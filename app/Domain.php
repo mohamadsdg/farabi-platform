@@ -13,6 +13,10 @@ class Domain extends Model
         'display'
     ];
 
+    protected $dates = [
+        'start_date',
+    ];
+
     /*
      * Relationship
      */
