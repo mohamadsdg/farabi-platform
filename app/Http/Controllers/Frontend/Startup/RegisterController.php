@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Frontend\Startup;
 
+use App\Domain;
 use App\Founder;
 use App\Grade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Startup\FounderRequest;
+use App\Prop;
 use App\Skill;
 use App\University;
 use App\User;
@@ -86,6 +88,14 @@ class RegisterController extends Controller
     {
         // TODO ** check session for current step **
         $data = [];
+        $data['domain'] = Domain::all()->split(4);
+        $data['prop'] = Prop::all()->split(4);
+
         return view('frontend.startup.register.complete-form', compact('data'));
+    }
+
+    public function doComplete(Request $request)
+    {
+        return $request->all();
     }
 }
