@@ -32,8 +32,7 @@ class FounderRequest extends FormRequest
             'email' => 'required',
             'mobile' => 'required',
             'gender' => 'required',
-            'skills.*' => 'required',
-            'achievement' => 'required'
+            'skills.*' => 'required'
         ];
     }
 }

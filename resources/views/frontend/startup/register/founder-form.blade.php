@@ -41,12 +41,14 @@
                                     <ul data-uk-grid>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="first_name">نام </label>
-                                            <input name="first_name" type="text" id="first_name" autocomplete="off"
+                                            <input name="first_name" value="{{ old('first_name') }}" type="text"
+                                                   id="first_name" autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="last_name">نام خانوادگی</label>
-                                            <input name="last_name" type="text" id="last_name" autocomplete="off"
+                                            <input name="last_name" value="{{ old('last_name') }}" type="text"
+                                                   id="last_name" autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
@@ -57,7 +59,8 @@
                                                 <option disabled selected>-- انتخاب نمایید --</option>
                                                 @if(isset($data['grade']))
                                                     @foreach($data['grade'] as $grade)
-                                                        <option value="{{ $grade->id }}">{{ $grade->title }}</option>
+                                                        <option
+                                                            {{ old('grade_id') == $grade->id ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
                                                     @endforeach
                                                 @endif
                                             </select>
@@ -69,6 +72,7 @@
                                                 @if(isset($data['university']))
                                                     @foreach($data['university'] as $university)
                                                         <option
+                                                            {{ old('university_id') == $university->id ? 'selected' : '' }}
                                                             value="{{ $university->id }}">{{ $university->name }}</option>
                                                     @endforeach
                                                 @endif
@@ -76,17 +80,20 @@
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="major">رشته تحصیلی</label>
-                                            <input name="major" type="text" id="major" autocomplete="off"
+                                            <input name="major" value="{{ old('major') }}" type="text" id="major"
+                                                   autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="email">نشانی ایمیل</label>
-                                            <input name="email" type="text" id="email" autocomplete="off"
+                                            <input name="email" value="{{ old('email') }}" type="text" id="email"
+                                                   autocomplete="off"
                                                    data-valid-required data-valid-email/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="mobile">شماره همراه</label>
-                                            <input name="mobile" type="text" id="mobile" autocomplete="off"
+                                            <input name="mobile" value="{{ old('mobile') }}" type="text" id="mobile"
+                                                   autocomplete="off"
                                                    data-valid-required
                                                    data-valid-regex="09[0|1|2|3|9]([ ]|,|-|[()]){0,2}(?:[0-9]([ ]|,|-|[()]){0,2}){8}"/>
                                         </li>
@@ -100,6 +107,8 @@
                                                         <input class="uk-radio"
                                                                type="radio"
                                                                name="gender"
+                                                               value="male"
+                                                               checked
                                                                id="has_male"
                                                                data-valid-depend="#soldiership_status"
                                                                data-target-input="#soldiership_holder"
@@ -112,22 +121,34 @@
                                                         <input class="uk-radio"
                                                                type="radio"
                                                                name="gender"
-                                                               checked
+                                                               value="female"
                                                                data-target-input="#soldiership_holder"
                                                                data-action-input="hidden"/>
                                                         زن
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div id="soldiership_holder" style="display:none">
+                                            <div id="soldiership_holder">
                                                 <label class="fs1_label" for="soldiership_status">وضعیت نظام
                                                     وظیفه</label>
                                                 <select name="soldiership_status" id="soldiership_status">
                                                     <option disabled selected>-- انتخاب نمایید --</option>
-                                                    <option value="0">معافیت دائم</option>
-                                                    <option value="1">معافیت موقت</option>
-                                                    <option value="2">مشمول</option>
-                                                    <option value="3">اتمام خدمت</option>
+                                                    <option
+                                                        {{ old('soldiership_status') == 0 ? 'selected' : '' }} value="0">
+                                                        معافیت دائم
+                                                    </option>
+                                                    <option
+                                                        {{ old('soldiership_status') == 1 ? 'selected' : '' }} value="1">
+                                                        معافیت موقت
+                                                    </option>
+                                                    <option
+                                                        {{ old('soldiership_status') == 2 ? 'selected' : '' }} value="2">
+                                                        مشمول
+                                                    </option>
+                                                    <option
+                                                        {{ old('soldiership_status') == 3 ? 'selected' : '' }} value="3">
+                                                        اتمام خدمت
+                                                    </option>
                                                 </select>
                                             </div>
                                         </li>
@@ -158,7 +179,10 @@
                                             <label class="fs1_label opt" for="achievement">
                                                 مهمترین دستاورد شما تا حالا چه چیزی بوده ؟
                                             </label>
-                                            <textarea name="achievement" id="achievement" data-autosize></textarea>
+                                            <textarea name="achievement" id="achievement"
+                                                      data-autosize>
+                                                {{ old('achievement') }}
+                                            </textarea>
                                         </li>
                                     </ul>
                                 </div>

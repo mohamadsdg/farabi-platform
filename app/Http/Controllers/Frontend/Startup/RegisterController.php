@@ -19,6 +19,13 @@ class RegisterController extends Controller
 {
     public function founder()
     {
+        // session handle
+        if (session()->has('current-step') && session('current-step') > 1) {
+            // redirect to edit page
+        }
+
+        session()->put('current-step', 1);
+
         $data = [];
         $data['skill'] = Skill::all()->split(2);
         $data['grade'] = Grade::all();
@@ -29,7 +36,6 @@ class RegisterController extends Controller
 
     public function doFounder(FounderRequest $request)
     {
-        // TODO ** check session for current step **
         // retrieve data
         $firstName = $request->get('first_name');
         $lastName = $request->get('last_name');
@@ -71,19 +77,29 @@ class RegisterController extends Controller
         // founder skills
         $founder->skills()->sync($skills);
 
+        // set session
+        session()->put('current-step', 2);
+
         return redirect(route('frontend.startup.register.team'));
     }
 
     public function team()
     {
-        // TODO ** check session for current step **
+        // session handle
+        if (session()->has('current-step') && session('current-step') > 2) {
+            // redirect to edit page
+        }
+
+        $this->_handle(2);
+
+        // set session
+        session()->put('current-step', 2);
+
         return view('frontend.startup.register.team-form');
     }
 
     public function doTeam(Request $request)
     {
-//        return $request->all();
-
         // retrieve data
         $members = $request->get('members');
 
@@ -98,11 +114,20 @@ class RegisterController extends Controller
 
         // members data
         $team->members()->createMany($members);
+
+        // set session
+        session()->put('current-step', 3);
     }
 
     public function complete()
     {
-        // TODO ** check session for current step **
+        // session handle
+        if (session()->has('current-step') && session('current-step') > 3) {
+            // redirect to edit page
+        }
+
+        $this->_handle(3);
+
         $data = [];
         $data['domain'] = Domain::all()->split(4);
         $data['prop'] = Prop::all()->split(4);
@@ -113,5 +138,40 @@ class RegisterController extends Controller
     public function doComplete(Request $request)
     {
         return $request->all();
+
+        // set session
+        session()->put('current-step', 4);
+    }
+
+    protected function _handle($currentStep)
+    {
+        if (session()->has('current-step')) {
+            switch (session('current-step')) {
+                case 1:
+                    if ($currentStep == 1) {
+                        return 1;
+                    }
+                    return redirect(route('frontend.startup.register.founder-form'));
+                    break;
+                case 2:
+                    if ($currentStep == 2) {
+                        return 1;
+                    }
+                    return redirect(route('frontend.startup.register.team-form'));
+                    break;
+                case 3:
+                    if ($currentStep == 3) {
+                        return 1;
+                    }
+                    return redirect(route('frontend.startup.register.complete-form'));
+                    break;
+                case 4:
+                    // return status
+                    break;
+                default:
+                    break;
+            }
+        }
+        return redirect(route('frontend.startup.register.founder-form'));
     }
 }
