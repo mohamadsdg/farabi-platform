@@ -22,6 +22,8 @@ Route::group(['namespace' => 'Frontend'], function () {
         Route::get('/register/step/complete', ['as' => 'frontend.startup.register.form', 'uses' => 'RegisterController@complete']);
         Route::post('/register/step/complete', ['as' => 'frontend.startup.register.complete', 'uses' => 'RegisterController@complete']);
 
+        // Upload Dir
+        Route::post('/upload', ['as' => 'frontend.startup.upload', 'uses' => 'UploadController@upload']);
     });
 
 });

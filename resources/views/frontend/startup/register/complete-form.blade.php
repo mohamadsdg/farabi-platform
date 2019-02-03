@@ -50,7 +50,8 @@
                             </li>
                         </ul>
                     </div>
-                    <form data-valid-form action="{{ route('frontend.startup.register.complete') }}" method="POST">
+                    <form data-valid-form action="{{ route('frontend.startup.register.complete') }}" method="POST"
+                          enctype="multipart/form-data">
                         @csrf
                         <div class="form_group_style1">
                             <div class="fg1_inner">
@@ -374,30 +375,34 @@
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                            شماره یک</h4></div>
-                                                    <input type="file" data-max-files="1">
+                                                        <i class="icon"></i>
+                                                        <h4 class="text uk-margin-remove">آپلود فایل شماره یک</h4>
+                                                    </div>
+                                                    <input name="file" type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                            شماره دوم</h4></div>
-                                                    <input type="file" data-max-files="1">
+                                                        <i class="icon"></i>
+                                                        <h4 class="text uk-margin-remove">آپلود فایل شماره دوم</h4>
+                                                    </div>
+                                                    <input name="file" type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                            شماره سوم</h4></div>
-                                                    <input type="file" data-max-files="1">
+                                                        <i class="icon"></i>
+                                                        <h4 class="text uk-margin-remove">آپلود فایل شماره سوم</h4>
+                                                    </div>
+                                                    <input name="file" type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                            شماره چهارم</h4></div>
-                                                    <input type="file" data-max-files="1">
+                                                        <i class="icon"></i>
+                                                        <h4 class="text uk-margin-remove">آپلود فایل شماره چهارم</h4>
+                                                    </div>
+                                                    <input name="file" type="file" data-max-files="1">
                                                 </div>
                                             </div>
                                         </li>
@@ -457,6 +462,7 @@
         inputElement.map(function (index, elem) {
             let pond = FilePond.create(elem);
             pond.setOptions({
+                server: '/startup/upload',
                 labelIdle: 'فایل خود را بکشید و یا <span class="filepond--label-action"> انتخاب کنید </span>',
                 labelButtonRemoveItem: 'پاک کنید',
                 labelFileLoading: 'در حال بارگذاری',
