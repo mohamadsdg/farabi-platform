@@ -1,4 +1,4 @@
-@extends('frontend.startup.register.layout')
+@extends('frontend.startup.register.container.layout')
 
 @section('content')
     <section id="apply">
@@ -6,7 +6,8 @@
             <div class="inner">
                 <div class="form_all_group">
                     @include('frontend.startup.register.component.progress-tracker')
-                    <form data-valid-form action="{{ route('frontend.startup.register.founder') }}" method="POST">
+                    <form data-valid-form action="{{ route('frontend.startup.register.founder.update') }}"
+                          method="POST">
                         @csrf
                         <div class="form_group_style1">
                             <div class="fg1_inner">
@@ -14,13 +15,15 @@
                                     <ul data-uk-grid>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="first_name">نام </label>
-                                            <input name="first_name" value="{{ old('first_name') }}" type="text"
+                                            <input name="first_name" value="{{ $data['founder']->first_name }}"
+                                                   type="text"
                                                    id="first_name" autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="last_name">نام خانوادگی</label>
-                                            <input name="last_name" value="{{ old('last_name') }}" type="text"
+                                            <input name="last_name" value="{{ $data['founder']->last_name }}"
+                                                   type="text"
                                                    id="last_name" autocomplete="off"
                                                    data-valid-required/>
                                         </li>
@@ -33,7 +36,7 @@
                                                 @if(isset($data['grade']))
                                                     @foreach($data['grade'] as $grade)
                                                         <option
-                                                            {{ old('grade_id') == $grade->id ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
+                                                            {{ $data['founder']->grade_id == $grade->id ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
                                                     @endforeach
                                                 @endif
                                             </select>
@@ -45,7 +48,7 @@
                                                 @if(isset($data['university']))
                                                     @foreach($data['university'] as $university)
                                                         <option
-                                                            {{ old('university_id') == $university->id ? 'selected' : '' }}
+                                                            {{ $data['founder']->university_id == $university->id ? 'selected' : '' }}
                                                             value="{{ $university->id }}">{{ $university->name }}</option>
                                                     @endforeach
                                                 @endif
@@ -53,19 +56,22 @@
                                         </li>
                                         <li class="fs1_item uk-width-1-3">
                                             <label class="fs1_label" for="major">رشته تحصیلی</label>
-                                            <input name="major" value="{{ old('major') }}" type="text" id="major"
+                                            <input name="major" value="{{ $data['founder']->major }}" type="text"
+                                                   id="major"
                                                    autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="email">نشانی ایمیل</label>
-                                            <input name="email" value="{{ old('email') }}" type="text" id="email"
+                                            <input name="email" value="{{ $data['user']->email }}" type="text"
+                                                   id="email"
                                                    autocomplete="off"
                                                    data-valid-required data-valid-email/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="mobile">شماره همراه</label>
-                                            <input name="mobile" value="{{ old('mobile') }}" type="text" id="mobile"
+                                            <input name="mobile" value="{{ $data['user']->mobile }}" type="text"
+                                                   id="mobile"
                                                    autocomplete="off"
                                                    data-valid-required
                                                    data-valid-regex="09[0|1|2|3|9]([ ]|,|-|[()]){0,2}(?:[0-9]([ ]|,|-|[()]){0,2}){8}"/>
@@ -81,7 +87,7 @@
                                                                type="radio"
                                                                name="gender"
                                                                value="male"
-                                                               checked
+                                                               {{ $data['user']->gender == 'male' ? 'checked' : '' }}
                                                                id="has_male"
                                                                data-valid-depend="#soldiership_status"
                                                                data-target-input="#soldiership_holder"
@@ -95,31 +101,33 @@
                                                                type="radio"
                                                                name="gender"
                                                                value="female"
+                                                               {{ $data['user']->gender == 'female' ? 'checked' : '' }}
                                                                data-target-input="#soldiership_holder"
                                                                data-action-input="hidden"/>
                                                         زن
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div id="soldiership_holder">
+                                            <div id="soldiership_holder"
+                                                 style="{{ $data['user']->gender == 'female' ? 'display: none;' : '' }}">
                                                 <label class="fs1_label" for="soldiership_status">وضعیت نظام
                                                     وظیفه</label>
                                                 <select name="soldiership_status" id="soldiership_status">
                                                     <option disabled selected>-- انتخاب نمایید --</option>
                                                     <option
-                                                        {{ old('soldiership_status') == 0 ? 'selected' : '' }} value="0">
+                                                        {{ $data['user']->soldiership_status == 0 ? 'selected' : '' }} value="0">
                                                         معافیت دائم
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 1 ? 'selected' : '' }} value="1">
+                                                        {{ $data['user']->soldiership_status == 1 ? 'selected' : '' }} value="1">
                                                         معافیت موقت
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 2 ? 'selected' : '' }} value="2">
+                                                        {{ $data['user']->soldiership_status == 2 ? 'selected' : '' }} value="2">
                                                         مشمول
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 3 ? 'selected' : '' }} value="3">
+                                                        {{ $data['user']->soldiership_status == 3 ? 'selected' : '' }} value="3">
                                                         اتمام خدمت
                                                     </option>
                                                 </select>
@@ -135,7 +143,7 @@
                                                                 <div class="check_style1">
                                                                     <label>
                                                                         <input name="skills[]" value="{{ $skill->id }}"
-                                                                               {{ (old('skills')) ? (in_array($skill->id, old('skills')) ? 'checked' : '' ): '' }}
+                                                                               {{ (in_array($skill->id, $data['skills']) ? 'checked' : '' ) }}
                                                                                class="uk-checkbox"
                                                                                type="checkbox"
                                                                                data-valid-min="3"
@@ -154,14 +162,14 @@
                                                 مهمترین دستاورد شما تا حالا چه چیزی بوده ؟
                                             </label>
                                             <textarea name="achievement" id="achievement"
-                                                      data-autosize>{{ old('achievement') }}</textarea>
+                                                      data-autosize>{{ $data['founder']->achievement }}</textarea>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-row-reverse">
-                            <button type="submit" class="btn_style1 bg_purple">تائید و ادامه</button>
+                            <button type="submit" class="btn_style1 bg_purple">ویرایش اطلاعات</button>
                         </div>
                     </form>
                 </div>

@@ -14,7 +14,8 @@ class Team extends Model
         'introduction',
         'teamwork',
         'description',
-        'startup_id'
+        'startup_id',
+        'founder_id'
     ];
 
     public function members()
@@ -25,5 +26,10 @@ class Team extends Model
     public function startup()
     {
         return $this->belongsTo(Startup::class);
+    }
+
+    public function founder()
+    {
+        return $this->belongsTo(Founder::class);
     }
 }

@@ -22,6 +22,7 @@ class CreateTeamsTable extends Migration
             $table->text('teamwork');
             $table->text('description');
             $table->unsignedInteger('startup_id')->nullable();
+            $table->unsignedInteger('founder_id')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

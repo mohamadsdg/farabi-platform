@@ -40,4 +40,9 @@ class Founder extends Model
     {
         return $this->hasOne(Startup::class);
     }
+
+    public function team()
+    {
+        return $this->hasOne(Team::class);
+    }
 }

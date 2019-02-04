@@ -12,15 +12,27 @@ Route::group(['namespace' => 'Frontend'], function () {
             return 'startup section';
         });
 
-        // Register
-        Route::get('/register/step/founder', ['as' => 'frontend.startup.register.founder-form', 'uses' => 'RegisterController@founder']);
-        Route::post('/register/step/founder', ['as' => 'frontend.startup.register.founder', 'uses' => 'RegisterController@doFounder']);
+        /*
+        * Register
+        */
 
-        Route::get('/register/step/team', ['as' => 'frontend.startup.register.team-form', 'uses' => 'RegisterController@team']);
-        Route::post('/register/step/team', ['as' => 'frontend.startup.register.team', 'uses' => 'RegisterController@doTeam']);
+        // Founder
+        Route::get('/register/step/founder', ['as' => 'frontend.startup.register.founder.create', 'uses' => 'FounderController@create']);
+        Route::post('/register/step/founder', ['as' => 'frontend.startup.register.founder.store', 'uses' => 'FounderController@store']);
+        Route::get('/register/step/founder/edit', ['as' => 'frontend.startup.register.founder.edit', 'uses' => 'FounderController@edit']);
+        Route::post('/register/step/founder/update', ['as' => 'frontend.startup.register.founder.update', 'uses' => 'FounderController@update']);
 
-        Route::get('/register/step/complete', ['as' => 'frontend.startup.register.complete-form', 'uses' => 'RegisterController@complete']);
-        Route::post('/register/step/complete', ['as' => 'frontend.startup.register.complete', 'uses' => 'RegisterController@complete']);
+        // Team
+        Route::get('/register/step/team', ['as' => 'frontend.startup.register.team.create', 'uses' => 'TeamController@create']);
+        Route::post('/register/step/team', ['as' => 'frontend.startup.register.team.store', 'uses' => 'TeamController@store']);
+        Route::get('/register/step/team/edit', ['as' => 'frontend.startup.register.team.edit', 'uses' => 'TeamController@edit']);
+        Route::post('/register/step/team/update', ['as' => 'frontend.startup.register.team.update', 'uses' => 'TeamController@update']);
+
+        // Startup
+        Route::get('/register/step/startup', ['as' => 'frontend.startup.register.startup.create', 'uses' => 'StartupController@create']);
+        Route::post('/register/step/startup', ['as' => 'frontend.startup.register.startup.store', 'uses' => 'StartupController@store']);
+        Route::get('/register/step/startup/edit', ['as' => 'frontend.startup.register.startup.edit', 'uses' => 'StartupController@edit']);
+        Route::post('/register/step/startup/update', ['as' => 'frontend.startup.register.startup.update', 'uses' => 'StartupController@update']);
 
         // Upload Dir
         Route::post('/upload', ['as' => 'frontend.startup.upload', 'uses' => 'UploadController@upload']);

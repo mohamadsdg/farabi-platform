@@ -1,4 +1,4 @@
-@extends('frontend.startup.register.layout')
+@extends('frontend.startup.register.container.layout')
 
 @section('content')
     <section id="apply">
@@ -6,7 +6,7 @@
             <div class="inner">
                 <div class="form_all_group">
                     @include('frontend.startup.register.component.progress-tracker')
-                    <form data-valid-form action="{{ route('frontend.startup.register.team') }}" method="POST">
+                    <form data-valid-form action="{{ route('frontend.startup.register.team.store') }}" method="POST">
                         @csrf
                         <div class="form_group_style1">
                             <div class="fg1_inner">
