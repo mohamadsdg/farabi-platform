@@ -7,6 +7,7 @@ use App\Founder;
 use App\Grade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Frontend\Startup\FounderRequest;
+use App\Http\Requests\Frontend\Startup\TeamRequest;
 use App\Prop;
 use App\Skill;
 use App\Team;
@@ -21,10 +22,12 @@ class RegisterController extends Controller
     {
         // session handle
         if (session()->has('current-step') && session('current-step') > 1) {
-            // redirect to edit page
+            return 'founder edit page';
         }
 
-        session()->put('current-step', 1);
+        if (!session()->has('current-step')) {
+            session()->put('current-step', 1);
+        }
 
         $data = [];
         $data['skill'] = Skill::all()->split(2);
@@ -80,25 +83,24 @@ class RegisterController extends Controller
         // set session
         session()->put('current-step', 2);
 
-        return redirect(route('frontend.startup.register.team'));
+        return $this->_handle();
     }
 
     public function team()
     {
         // session handle
         if (session()->has('current-step') && session('current-step') > 2) {
-            // redirect to edit page
+            return 'team edit page';
         }
 
-        $this->_handle(2);
-
-        // set session
-        session()->put('current-step', 2);
+        if (!(session()->has('current-step') && session('current-step') == 2)) {
+            return $this->_handle();
+        }
 
         return view('frontend.startup.register.team-form');
     }
 
-    public function doTeam(Request $request)
+    public function doTeam(TeamRequest $request)
     {
         // retrieve data
         $members = $request->get('members');
@@ -117,16 +119,20 @@ class RegisterController extends Controller
 
         // set session
         session()->put('current-step', 3);
+
+        return $this->_handle();
     }
 
     public function complete()
     {
         // session handle
         if (session()->has('current-step') && session('current-step') > 3) {
-            // redirect to edit page
+            return 'complete edit page';
         }
 
-        $this->_handle(3);
+        if (!(session()->has('current-step') && session('current-step') == 3)) {
+            return $this->_handle();
+        }
 
         $data = [];
         $data['domain'] = Domain::all()->split(4);
@@ -141,34 +147,28 @@ class RegisterController extends Controller
 
         // set session
         session()->put('current-step', 4);
+
+        return $this->_handle();
     }
 
-    protected function _handle($currentStep)
+    protected function _handle()
     {
         if (session()->has('current-step')) {
             switch (session('current-step')) {
                 case 1:
-                    if ($currentStep == 1) {
-                        return 1;
-                    }
                     return redirect(route('frontend.startup.register.founder-form'));
                     break;
                 case 2:
-                    if ($currentStep == 2) {
-                        return 1;
-                    }
                     return redirect(route('frontend.startup.register.team-form'));
                     break;
                 case 3:
-                    if ($currentStep == 3) {
-                        return 1;
-                    }
                     return redirect(route('frontend.startup.register.complete-form'));
                     break;
                 case 4:
                     // return status
                     break;
                 default:
+                    return redirect(route('frontend.startup.register.founder-form'));
                     break;
             }
         }

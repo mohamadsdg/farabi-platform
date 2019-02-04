@@ -5,34 +5,7 @@
         <div class="uk-container">
             <div class="inner">
                 <div class="form_all_group">
-                    <div class="progress_tracker_style1">
-                        <ul class="uk-flex uk-flex-around uk-margin-remove">
-                            <li>
-                                <div class="pts1_step active">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        مشخصات موسس تیم
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pts1_step">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        اطلاعات تیم
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pts1_step">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        اطلاعات استارتاپ
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    @include('frontend.startup.register.component.progress-tracker')
                     <form data-valid-form action="{{ route('frontend.startup.register.founder') }}" method="POST">
                         @csrf
                         <div class="form_group_style1">
@@ -162,6 +135,7 @@
                                                                 <div class="check_style1">
                                                                     <label>
                                                                         <input name="skills[]" value="{{ $skill->id }}"
+                                                                               {{ (old('skills')) ? (in_array($skill->id, old('skills')) ? 'checked' : '' ): '' }}
                                                                                class="uk-checkbox"
                                                                                type="checkbox"
                                                                                data-valid-min="3"
@@ -180,9 +154,7 @@
                                                 مهمترین دستاورد شما تا حالا چه چیزی بوده ؟
                                             </label>
                                             <textarea name="achievement" id="achievement"
-                                                      data-autosize>
-                                                {{ old('achievement') }}
-                                            </textarea>
+                                                      data-autosize>{{ old('achievement') }}</textarea>
                                         </li>
                                     </ul>
                                 </div>

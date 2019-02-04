@@ -22,34 +22,7 @@
         <div class="uk-container">
             <div class="inner">
                 <div class="form_all_group">
-                    <div class="progress_tracker_style1">
-                        <ul class="uk-flex uk-flex-around uk-margin-remove">
-                            <li>
-                                <div class="pts1_step pass">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        مشخصات موسس تیم
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pts1_step pass">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        اطلاعات تیم
-                                    </span>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pts1_step active">
-                                    <span class="pts1_shape"></span>
-                                    <span class="pts1_text">
-                                        اطلاعات استارتاپ
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                    @include('frontend.startup.register.component.progress-tracker')
                     <form data-valid-form action="{{ route('frontend.startup.register.complete') }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
@@ -59,7 +32,7 @@
                                     <ul data-uk-grid>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="name">نام استارتاپ</label>
-                                            <input name="name" type="text" id="name" autocomplete="off"
+                                            <input name="name" value="{{ old('name') }}" type="text" id="name" autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
@@ -67,6 +40,7 @@
                                             <div data-wrapper-start>
                                                 <input name="start_date"
                                                        type="text"
+                                                       value="{{ old('start_date') }}"
                                                        class="uk-text-center"
                                                        readOnly id="start_date"
                                                        data-valid-required
@@ -76,7 +50,7 @@
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label" for="introduction">معرفی استارتاپ</label>
                                             <textarea name="introduction" id="introduction" data-autosize
-                                                      data-valid-required></textarea>
+                                                      data-valid-required>{{ old('introduction') }}</textarea>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label">حوزه فعالیت استارتاپ ؟</label>
@@ -88,7 +62,7 @@
                                                                 <div class="check_style1">
                                                                     <label class="en_word">
                                                                         <input name="domains[]"
-                                                                               value="{{ $domain->id }}"
+                                                                               {{ (old('domains')) ? (in_array($domain->id, old('domains')) ? 'checked' : '' ): '' }}                                                                               value="{{ $domain->id }}"
                                                                                class="uk-checkbox" type="checkbox"
                                                                                data-valid-min="7"
                                                                                data-valid-max="12">
@@ -113,6 +87,7 @@
                                                                     <label class="en_word">
                                                                         <input name="props[]"
                                                                                value="{{ $prop->id }}"
+                                                                               {{ (old('props')) ? (in_array($prop->id, old('props')) ? 'checked' : '' ): '' }}
                                                                                class="uk-checkbox" type="checkbox"
                                                                                data-valid-min="7"
                                                                                data-valid-max="12">

@@ -23,7 +23,15 @@ class TeamRequest extends FormRequest
      */
     public function rules()
     {
-        return [];
+        return [
+            'members.*.name' => 'required',
+            'members.*.position' => 'required',
+            'background' => 'required',
+            'employees_count' => 'required|numeric',
+            'introduction' => 'required',
+            'teamwork' => 'required',
+            'description' => 'required',
+        ];
     }
 
 
