@@ -32,7 +32,8 @@
                                     <ul data-uk-grid>
                                         <li class="fs1_item uk-width-1-2">
                                             <label class="fs1_label" for="name">نام استارتاپ</label>
-                                            <input name="name" value="{{ old('name') }}" type="text" id="name" autocomplete="off"
+                                            <input name="name" value="{{ old('name') }}" type="text" id="name"
+                                                   autocomplete="off"
                                                    data-valid-required/>
                                         </li>
                                         <li class="fs1_item uk-width-1-2">
@@ -89,8 +90,7 @@
                                                                                value="{{ $prop->id }}"
                                                                                {{ (old('props')) ? (in_array($prop->id, old('props')) ? 'checked' : '' ): '' }}
                                                                                class="uk-checkbox" type="checkbox"
-                                                                               data-valid-min="7"
-                                                                               data-valid-max="12">
+                                                                               data-valid-min="3" data-valid-max="5">
                                                                         {{ $prop->title }}
                                                                     </label>
                                                                 </div>
