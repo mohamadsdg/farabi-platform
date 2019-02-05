@@ -258,6 +258,7 @@
             $(this).on('click', function () {
                 var $valElm = $(this).attr("data-valid-depend");
                 var $selElm = $(this);
+                // console.log($selElm);
                 $($valElm).rules('add', {
                     required: "#" + $selElm[0].id + ":checked",
                     messages: {
