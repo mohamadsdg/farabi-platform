@@ -477,7 +477,7 @@
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label">كدام يك از موارد زير در استارتاپ شما وجود دارد
                                                 ؟</label>
-                                            <ul class="uk-flex uk-child-width-1-4 wrapper_check">
+                                            <ul class="uk-flex uk-child-width-1-4 wrapper_check" data-wrapper-group>
                                                 <li>
                                                     <div class="check_style1">
                                                         <label class="en_word">
@@ -710,7 +710,7 @@
                                             </ul>
                                         </li>
                                         <li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label" for="s3">آیا نسخه نمایشی/وبسایت/ نمونه آزمایشی
+                                            <label class="fs1_label">آیا نسخه نمایشی/وبسایت/ نمونه آزمایشی
                                                 وجود
                                                 دارد ؟</label>
                                             <div class="uk-display-inline-block uk-margin-small-right">
@@ -742,7 +742,7 @@
                                             <input type="text"
                                                    placeholder="لینک آن را وارد نمایید "
                                                    id="mvp_address"
-                                                   nan
+                                                   name="mvp_address"
                                                    autocomplete="off" style="display: none"/>
                                         </li>
                                         <!--<li class="fs1_item uk-width-1-1">
@@ -773,7 +773,7 @@
                                             <textarea id="s7" data-autosize></textarea>
                                         </li>-->
                                         <li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label" for="s10">
+                                            <label class="fs1_label">
                                                 آیا تا کنون شرکتی برای ایده ثبت شده است؟
                                             </label>
                                             <div class="uk-display-inline-block uk-margin-small-right">
@@ -783,7 +783,9 @@
                                                                type="radio"
                                                                name="is_idea_submitted"
                                                                value="1"
-                                                               data-target-input="#s10"
+                                                               id="has_company"
+                                                               data-valid-depend="#company_rn"
+                                                               data-target-input="#company_status"
                                                                data-action-input="show"/>
                                                         بله
                                                     </label>
@@ -795,13 +797,13 @@
                                                                name="is_idea_submitted"
                                                                value="0"
                                                                checked
-                                                               data-target-input="#s10"
+                                                               data-target-input="#company_status"
                                                                data-action-input="hidden"/>
                                                         خیر
                                                     </label>
                                                 </div>
                                             </div>
-                                            <div id="s10" style="display: none">
+                                            <div id="company_status" style="display: none">
                                                 <div data-uk-grid>
                                                     <div class="fs1_item uk-width-1-2">
                                                         <label class="fs1_label" for="company_name">نام شرکت</label>
@@ -835,33 +837,33 @@
                                             <label class="fs1_label">
                                                 آپلود فایل های ضمیمه
                                             </label>
-                                            <div class="uk-flex uk-flex-around">
+                                            <div class="uk-flex uk-flex-around uk-margin-small-top">
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                        شماره یک</h4></div>
+                                                        <i class="icon"></i><h4 class="text uk-margin-remove">business
+                                                        model</h4></div>
                                                     <input type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                        شماره دوم</h4></div>
+                                                        <i class="icon"></i><h4 class="text uk-margin-remove">business
+                                                        plan</h4></div>
                                                     <input type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l uk-margin-small-left">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                        شماره سوم</h4></div>
+                                                        <i class="icon"></i><h4 class="text uk-margin-remove">finance
+                                                        model</h4></div>
                                                     <input type="file" data-max-files="1">
                                                 </div>
                                                 <div class="js-upload uk-width-1-1 uk-width-1-4@l">
                                                     <div
                                                         class="file-label uk-flex uk-flex-middle uk-flex-center uk-margin-small-bottom">
-                                                        <i class="icon"></i><h4 class="text uk-margin-remove">آپلود فایل
-                                                        شماره چهارم</h4></div>
+                                                        <i class="icon"></i><h4 class="text uk-margin-remove">
+                                                        pitchdeck</h4></div>
                                                     <input type="file" data-max-files="1">
                                                 </div>
                                             </div>
@@ -872,8 +874,7 @@
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
                             <a href="apply-step2.html" class="btn_style1 bg_gray">بازگشت</a>
-                            <!--<a href="#modal-policy" data-uk-toggle class="btn_style1 bg_purple">ثبت</a>-->
-                            <button type="submit" class="btn_style1 bg_purple">ثبت</button>
+                            <button type="submit" data-check-submit class="btn_style1 bg_purple">ثبت</button>
                         </div>
                     </form>
                 </div>
@@ -900,7 +901,9 @@
                     با این شرایط موافقم
                 </label>
             </div>
-            <button class="btn_style1 bg_purple" type="button" disabled data-target="policy">ثبت و تایید نهایی</button>
+            <button class="btn_style1 bg_purple" data-btn-submit type="button" disabled data-target="policy">ثبت و تایید
+                نهایی
+            </button>
         </div>
     </div>
 </div>

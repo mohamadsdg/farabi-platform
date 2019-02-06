@@ -137,5 +137,29 @@
 
         })();
 
+        /*
+        *
+        * handle submit faker
+        *
+        * */
+
+        (function () {
+            // handle modal before submit
+            $('[data-check-submit]').on('click', function (ev) {
+                if ($("[data-valid-form]").valid()) {   // test for validity
+                    // do stuff if form is valid
+                    ev.preventDefault();
+                    UIkit.modal('#modal-policy').show();
+                } else {
+                    // do stuff if form is not valid
+                }
+            });
+
+            // handle submit after accept rules
+            $('[data-btn-submit]').on('click', function () {
+                $("[data-valid-form]").submit();
+            })
+        })();
+
     });
 })(jQuery);
