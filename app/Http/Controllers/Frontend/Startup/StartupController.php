@@ -58,7 +58,7 @@ class StartupController extends BaseController
             return redirect()->back()->withInput()->with('err', 'مجدد امتحان کنید');
         }
 
-        $startup->is_complete = true;
+        $startup->is_completed = true;
         $startup->save();
 
         $startup->domains()->sync($domains);
