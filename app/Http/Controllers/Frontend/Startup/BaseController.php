@@ -33,6 +33,7 @@ class BaseController extends Controller
                     break;
                 case 4:
                     // return status
+                    return 'signup successful';
                     break;
                 default:
                     return redirect(route('frontend.startup.register.founder.create'));
