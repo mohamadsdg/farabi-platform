@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>فرم ثبت نام</title>
     <link rel="stylesheet" href="{{ asset('assets/frontend/_framework/uikit-3.0.0/css/uikit-rtl.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/frontend/_css/master.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/frontend/_css/master.min.css?971120') }}">
     @yield('css')
 </head>
 <body>

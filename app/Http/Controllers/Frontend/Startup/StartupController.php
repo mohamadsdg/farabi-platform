@@ -58,6 +58,10 @@ class StartupController extends BaseController
             return redirect()->back()->withInput()->with('err', 'مجدد امتحان کنید');
         }
 
+        $team = $this->getUser()->founder->team;
+        $team->startup_id = $startup->id;
+        $team->save();
+
         $startup->is_completed = true;
         $startup->save();
 

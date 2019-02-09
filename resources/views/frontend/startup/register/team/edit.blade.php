@@ -50,7 +50,10 @@
                                                         استارتاپ</label>
                                                     <input name="employees_count" value="{{ $data['team']->employees_count }}"
                                                            type="text" id="employees_count"
-                                                           autocomplete="off" data-valid-required/>
+                                                           autocomplete="off"
+                                                           data-valid-required
+                                                           data-valid-regex="^[0-9]*$"
+                                                           maxlength="2"/>
                                                 </div>
                                                 <div class="uk-position-relative">
                                                     <label class="fs1_label" for="introduction">

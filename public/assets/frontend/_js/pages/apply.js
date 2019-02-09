@@ -142,7 +142,6 @@
         * handle submit faker
         *
         * */
-
         (function () {
             // handle modal before submit
             $('[data-check-submit]').on('click', function (ev) {

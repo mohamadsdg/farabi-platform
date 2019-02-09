@@ -387,7 +387,7 @@ input[disabled],
     font-weight: bold;
 }
 
-/*#2*/
+/*#1*/
 .modal_style1 {
 }
 
@@ -400,6 +400,20 @@ input[disabled],
     text-align: justify;
     font-size: 1rem;
     line-height: 27px;
+}
+
+/*#1*/
+.file-label {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.file-label .icon {
+    background: transparent url("../images/icon/upload.svg") no-repeat right / contain;
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 3px;
 }
 
 /************************************/

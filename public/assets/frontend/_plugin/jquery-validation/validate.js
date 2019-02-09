@@ -174,6 +174,7 @@
         ^[\u0600-\u06FF\s]+$ ===> persian ascii character
         [\x00-\x80]+ ===> latin ascii character
         ^[A-Za-z][A-Za-z]*$ ===> latin character
+        ^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$ ==> uri
 
          */
 
