@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return redirect(route('frontend.startup.register.founder.create'));
+        return redirect()->route('frontend.startup.register.founder.create');
     }
 }
