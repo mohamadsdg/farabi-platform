@@ -33,7 +33,7 @@
                                                 @if(isset($data['grade']))
                                                     @foreach($data['grade'] as $grade)
                                                         <option
-                                                            {{ old('grade_id') == $grade->id ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
+                                                                {{ old('grade_id') == $grade->id ? 'selected' : '' }} value="{{ $grade->id }}">{{ $grade->title }}</option>
                                                     @endforeach
                                                 @endif
                                             </select>
@@ -45,8 +45,8 @@
                                                 @if(isset($data['university']))
                                                     @foreach($data['university'] as $university)
                                                         <option
-                                                            {{ old('university_id') == $university->id ? 'selected' : '' }}
-                                                            value="{{ $university->id }}">{{ $university->name }}</option>
+                                                                {{ old('university_id') == $university->id ? 'selected' : '' }}
+                                                                value="{{ $university->id }}">{{ $university->name }}</option>
                                                     @endforeach
                                                 @endif
                                             </select>
@@ -107,19 +107,19 @@
                                                 <select name="soldiership_status" id="soldiership_status">
                                                     <option disabled selected>-- انتخاب نمایید --</option>
                                                     <option
-                                                        {{ old('soldiership_status') == 0 ? 'selected' : '' }} value="0">
+                                                            {{ old('soldiership_status') == 0 ? 'selected' : '' }} value="0">
                                                         معافیت دائم
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 1 ? 'selected' : '' }} value="1">
+                                                            {{ old('soldiership_status') == 1 ? 'selected' : '' }} value="1">
                                                         معافیت موقت
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 2 ? 'selected' : '' }} value="2">
+                                                            {{ old('soldiership_status') == 2 ? 'selected' : '' }} value="2">
                                                         مشمول
                                                     </option>
                                                     <option
-                                                        {{ old('soldiership_status') == 3 ? 'selected' : '' }} value="3">
+                                                            {{ old('soldiership_status') == 3 ? 'selected' : '' }} value="3">
                                                         اتمام خدمت
                                                     </option>
                                                 </select>

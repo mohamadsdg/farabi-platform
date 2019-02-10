@@ -393,7 +393,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
-                            <a href="apply-step2.html" class="btn_style1 bg_gray">بازگشت</a>
+                            <a href="{{ route('frontend.startup.register.team.edit') }}" class="btn_style1 bg_gray">بازگشت</a>
                             <button type="submit" data-check-submit class="btn_style1 bg_purple">ثبت</button>
                         </div>
                     </form>
