@@ -13,7 +13,7 @@ class UploadController extends Controller
 
     public function upload(Request $request)
     {
-        if (!$request->hasFile('file')) {
+        if (!$request->hasFile('file') or (!$request->file('file')->isValid())) {
             return response(NULL, 419);
         }
 
