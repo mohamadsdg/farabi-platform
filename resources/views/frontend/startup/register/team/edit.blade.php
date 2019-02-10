@@ -93,7 +93,8 @@
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
                             <a href="{{ route('frontend.startup.register.founder.edit') }}" class="btn_style1 bg_gray">بازگشت</a>
-                            <button type="submit" class="btn_style1 bg_purple">ویرایش اطلاعات</button>
+                            <button type="submit" class="btn_style1 bg_purple bg_green">ویرایش اطلاعات</button>
+                            <a href="{{ route('frontend.startup.register.startup.create') }}" class="btn_style1 bg_purple">تائید و ادامه</a>
                         </div>
                     </form>
                 </div>

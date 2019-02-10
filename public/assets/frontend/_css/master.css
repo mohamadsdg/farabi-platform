@@ -305,6 +305,15 @@ input[disabled],
     background-color: #c3c2c2;
 }
 
+.btn_style1.bg_green {
+    background-color: #2DBF64;
+    border-color: #29b15c;
+}
+
+.btn_style1.bg_green:hover {
+    background-color: #2bb35f;
+}
+
 .btn_style1:disabled {
     background-color: transparent;
     color: #999;
