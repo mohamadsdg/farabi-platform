@@ -42,4 +42,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Member::class);
     }
+
+    # mutator
+    public function setEmailAttribute($value)
+    {
+        $this->attributes['email'] = strtolower($value);
+    }
 }

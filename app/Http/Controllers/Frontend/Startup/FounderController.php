@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Auth;
 
 class FounderController extends BaseController
 {
+    public $cache = 720;
+
     public function create()
     {
         // session handle
@@ -25,9 +27,16 @@ class FounderController extends BaseController
         }
 
         $data = [];
-        $data['skill'] = Skill::all()->split(2);
-        $data['grade'] = Grade::all();
-        $data['university'] = University::all();
+        # using cache system for some data
+        $data['skill'] = cache()->remember('frontend:skill:index', $this->cache, function () {
+            return Skill::all()->split(2);
+        });
+        $data['grade'] = cache()->remember('frontend:grade:index', $this->cache, function () {
+            return Grade::all();
+        });
+        $data['university'] = cache()->remember('frontend:university:index', $this->cache, function () {
+            return University::all();
+        });
 
         return view('frontend.startup.register.founder.create', compact('data'));
     }
@@ -88,9 +97,16 @@ class FounderController extends BaseController
         }
 
         $data = [];
-        $data['skill'] = Skill::all()->split(2);
-        $data['grade'] = Grade::all();
-        $data['university'] = University::all();
+        # using cache system for some data
+        $data['skill'] = cache()->remember('frontend:skill:index', $this->cache, function () {
+            return Skill::all()->split(2);
+        });
+        $data['grade'] = cache()->remember('frontend:grade:index', $this->cache, function () {
+            return Grade::all();
+        });
+        $data['university'] = cache()->remember('frontend:university:index', $this->cache, function () {
+            return University::all();
+        });
 
         $data['user'] = $this->getUser();
         $data['founder'] = $this->getUser()->founder;
