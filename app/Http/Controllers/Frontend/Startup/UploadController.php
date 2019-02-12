@@ -13,17 +13,22 @@ class UploadController extends Controller
 
     public function upload(Request $request)
     {
-        if (!$request->hasFile('file')) {
-            return response(NULL, 419);
+        if (
+            !$request->hasFile('business_model')
+            && !$request->hasFile('business_plan')
+            && !$request->hasFile('finance_model')
+            && !$request->hasFile('pitchdeck')
+        ) {
+            return response(NULL, 422);
         }
 
-        $ip = $request->ip();
-
         // Upload File
-        $file = $request->file('file');
+        $file = head($request->file());
 
         $allowMimeTypes = [
             'application/pdf',
+            'application/msword',
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
             'image/jpg',
             'image/jpeg',
             'image/png'
@@ -34,20 +39,20 @@ class UploadController extends Controller
         }
 
         //Make Model Folder
-        if (!Storage::exists(self::STORAGE_PATH_TO_UPLOAD_STARTUP . $ip . '/')) {
-            Storage::makeDirectory(self::STORAGE_PATH_TO_UPLOAD_STARTUP . $ip . '/');
+        if (!Storage::exists(self::STORAGE_PATH_TO_UPLOAD_STARTUP . '/')) {
+            Storage::makeDirectory(self::STORAGE_PATH_TO_UPLOAD_STARTUP . '/');
         }
 
         $randText = rand(10000, 99999);
         $fileName = $randText . '-' . preg_replace("/[^a-zA-Z0-9.]/", '', $file->getClientOriginalName());
 
-        if (Storage::exists(self::STORAGE_PATH_TO_UPLOAD_STARTUP . $ip . '/' . $fileName)) {
+        if (Storage::exists(self::STORAGE_PATH_TO_UPLOAD_STARTUP . '/' . $fileName)) {
             $fileName = rand(10000, 99999) . '-' . $fileName;
         }
 
-        $filePath = self::STORAGE_PATH_TO_UPLOAD_STARTUP . $ip . '/';
+        $filePath = self::STORAGE_PATH_TO_UPLOAD_STARTUP . '/';
         Storage::putFileAs($filePath, $file, $fileName);
 
-        return 1;
+        return response()->json(trim($fileName));
     }
 }
