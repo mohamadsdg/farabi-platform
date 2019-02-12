@@ -50,6 +50,11 @@ class StartupController extends BaseController
         $startup->market_research = $request->get('market_research');
         $startup->description = $request->get('description');
 
+        $startup->business_model_file = trim($request->get('business_model'), '"');
+        $startup->business_plan_file = trim($request->get('business_plan'), '"');
+        $startup->finance_model_file = trim($request->get('finance_model'), '"');
+        $startup->pitchdeck_file = trim($request->get('pitchdeck'), '"');
+
         $startup->founder_id = $this->getUser()->founder->id;
         $startup->team_id = $this->getUser()->founder->team->id;
 
@@ -58,13 +63,10 @@ class StartupController extends BaseController
             return redirect()->back()->withInput()->with('err', 'مجدد امتحان کنید');
         }
 
-<<<<<<< HEAD
-=======
         $team = $this->getUser()->founder->team;
         $team->startup_id = $startup->id;
         $team->save();
 
->>>>>>> 3b6d9a390ce1c33bbf4c7704d61dab4676335a4a
         $startup->is_completed = true;
         $startup->save();
 
@@ -116,6 +118,11 @@ class StartupController extends BaseController
         $startup->company_rn = $request->get('company_rn');
         $startup->market_research = $request->get('market_research');
         $startup->description = $request->get('description');
+
+        $startup->business_model_file = ($request->get('business_model')) ? trim($request->get('business_model'), '"') : $startup->business_model_file;
+        $startup->business_plan_file = ($request->get('business_plan')) ? trim($request->get('business_plan'), '"') : $startup->business_plan_file;
+        $startup->finance_model_file = ($request->get('finance_model')) ? trim($request->get('finance_model'), '"') : $startup->finance_model_file;
+        $startup->pitchdeck_file = ($request->get('pitchdeck')) ? trim($request->get('pitchdeck'), '"') : $startup->pitchdeck_file;
 
         $startup->founder_id = $this->getUser()->founder->id;
         $startup->team_id = $this->getUser()->founder->team->id;
