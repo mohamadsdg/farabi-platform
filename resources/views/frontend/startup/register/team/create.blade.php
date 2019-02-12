@@ -46,7 +46,10 @@
                                                         استارتاپ</label>
                                                     <input name="employees_count" value="{{ old('employees_count') }}"
                                                            type="text" id="employees_count"
-                                                           autocomplete="off" data-valid-required/>
+                                                           autocomplete="off"
+                                                           data-valid-required
+                                                           data-valid-regex="^[0-9]*$"
+                                                           maxlength="2"/>
                                                 </div>
                                                 <div class="uk-position-relative">
                                                     <label class="fs1_label" for="introduction">
@@ -85,7 +88,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
-                            <a href="apply.html" class="btn_style1 bg_gray">بازگشت</a>
+                            <a href="{{ route('frontend.startup.register.founder.edit') }}" class="btn_style1 bg_gray">بازگشت</a>
                             <button type="submit" class="btn_style1 bg_purple">تائید و ادامه</button>
                         </div>
                     </form>

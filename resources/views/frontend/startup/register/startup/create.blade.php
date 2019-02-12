@@ -1,22 +1,5 @@
 @extends('frontend.startup.register.container.layout')
 
-@section('css')
-    <style>
-        .file-label {
-            font-size: 0.8rem;
-            text-align: center;
-        }
-
-        .file-label .icon {
-            background: transparent url("{{ asset('assets/frontend/images/icon/upload.svg') }}") no-repeat right / contain;
-            display: block;
-            width: 20px;
-            height: 20px;
-            margin: 0 3px;
-        }
-    </style>
-@endsection
-
 @section('content')
     <section id="apply">
         <div class="uk-container">
@@ -198,7 +181,7 @@
                                                                    value="MVP"
                                                                    {{ old('stage') == 'MVP' ? 'checked' : '' }}
                                                                    data-valid-required>
-                                                            كمينه مجصول پذيرفتني(MVP)
+                                                            كمينه محصول پذيرفتنی (MVP)
                                                         </label>
                                                     </div>
                                                     <div class="check_style1">
@@ -207,7 +190,7 @@
                                                                    value="HJETM"
                                                                    {{ old('stage') == 'HJETM' ? 'checked' : '' }}
                                                                    data-valid-required>
-                                                            به تازگي وارد بازار شده
+                                                            به تازگی وارد بازار شده
                                                         </label>
                                                     </div>
                                                 </li>
@@ -245,7 +228,7 @@
                                                                    value="ITFMS"
                                                                    {{ old('stage') == 'ITFMS' ? 'checked' : '' }}
                                                                    data-valid-required>
-                                                            در مرحله بلوغ نهايي
+                                                            در مرحله بلوغ نهايی
                                                         </label>
                                                     </div>
                                                 </li>
@@ -288,12 +271,6 @@
                                                    value="{{ old('mvp_address') }}"
                                                    autocomplete="off" style="display: none"/>
                                         </li>
-                                        <!--<li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label req" for="s4">توضیح دهید که چرا این ایده را انتخاب
-                                                کرده
-                                                اید؟ </label>
-                                            <textarea id="s4" data-autosize></textarea>
-                                        </li>-->
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label" for="working">
                                                 چه مدت بر روی ایده خود کار کرده اید و تا کنون چه کارهایی انجام داده اید؟
@@ -308,13 +285,6 @@
                                             <textarea name="similar_startup" id="similar_startup" data-autosize
                                                       data-valid-required>{{ old('similar_startup') }}</textarea>
                                         </li>
-                                        <!--<li class="fs1_item uk-width-1-1">
-                                            <label class="fs1_label req" for="s7">
-                                                آیا تا کنون شرکتی برای ایده ثبت شده است؟ اگر بله سهام هر کدام از اعضای
-                                                تیم به چه شکل است؟ آیا دفتر کاری در حال حاضر دارید؟
-                                            </label>
-                                            <textarea id="s7" data-autosize></textarea>
-                                        </li>-->
                                         <li class="fs1_item uk-width-1-1">
                                             <label class="fs1_label">
                                                 آیا تا کنون شرکتی برای ایده ثبت شده است؟
@@ -423,7 +393,7 @@
                             </div>
                         </div>
                         <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between">
-                            <a href="apply-step2.html" class="btn_style1 bg_gray">بازگشت</a>
+                            <a href="{{ route('frontend.startup.register.team.edit') }}" class="btn_style1 bg_gray">بازگشت</a>
                             <button type="submit" data-check-submit class="btn_style1 bg_purple">ثبت</button>
                         </div>
                     </form>
@@ -438,7 +408,7 @@
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="ms1_title">قوانین و شرایط</h2>
             <p class="ms1_body">
-                اینجانب <span>--------</span>
+                اینجانب
                 با مطالعه ی کامل قوانین و شرایط شتابدهنده ستارگان فارابی نسبت به ثبت نام اولیه شتابدهنده اقدام نموده
                 ایم.
                 این ثبت نام هیچ گونه حق یا حقوقی برای بنده ایجاد نمی نماید و در حین انجام پروسه های اداری و عقد قرار داد

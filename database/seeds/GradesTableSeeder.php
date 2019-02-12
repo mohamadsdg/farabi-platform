@@ -33,7 +33,7 @@ class GradesTableSeeder extends Seeder
                 'created_at' => \Carbon\Carbon::now()
             ],
             [
-                'title' => 'ّدکتریٰ',
+                'title' => 'دکتری',
                 'display' => 1,
                 'position' => 1,
                 'created_at' => \Carbon\Carbon::now()

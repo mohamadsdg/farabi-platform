@@ -38,8 +38,8 @@ class CreateStartupsTable extends Migration
             $table->boolean('is_idea_submitted')->default(false);
             $table->string('company_name', 128)->nullable();
             $table->string('company_rn', 16)->nullable(); // Company Registration Number
-            $table->text('market_research');
-            $table->text('description');
+            $table->text('market_research')->nullable();;
+            $table->text('description')->nullable();;
 
             $table->string('business_model_file', 64)->nullable();
             $table->string('business_plan_file', 64)->nullable();

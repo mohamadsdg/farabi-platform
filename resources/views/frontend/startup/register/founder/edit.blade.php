@@ -168,8 +168,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-row-reverse">
-                            <button type="submit" class="btn_style1 bg_purple">ویرایش اطلاعات</button>
+                        <div class="uk-margin-medium uk-margin-remove-bottom uk-flex uk-flex-between uk-flex-row-reverse">
+                            <a href="{{ route('frontend.startup.register.team.create') }}" class="btn_style1 bg_purple">تائید و ادامه</a>
+                            <button type="submit" class="btn_style1 bg_green">ویرایش اطلاعات</button>
+                            <span></span>
                         </div>
                     </form>
                 </div>

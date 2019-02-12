@@ -35,8 +35,6 @@ class StartupRequest extends FormRequest
             'working' => 'required',
             'similar_startup' => 'required',
             'is_idea_submitted' => 'required',
-            'market_research' => 'required',
-            'description' => 'required',
         ];
     }
 
